@@ -66,7 +66,11 @@ def chat_handler(message):
     
     memory.update_memory(user_id, user_text, ai_reply)
     
-    bot.reply_to(message, ai_reply)
+    if len(ai_reply) > 4000:
+        for i in range(0, len(ai_reply), 4000):
+            bot.reply_to(message, ai_reply[i:i+4000])
+    else:
+        bot.reply_to(message, ai_reply)
     log_chat(username, user_text, ai_reply)
 
 if __name__ == "__main__":
