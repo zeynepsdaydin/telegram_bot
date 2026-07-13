@@ -40,7 +40,8 @@ def get_ai_response(user_message, session):
 
     payload = {
         "model": "google/gemma-4-26b-a4b-it:free",
-        "messages": messages
+        "messages": messages,
+        "temperature": 0.3
     }
 
     try:
