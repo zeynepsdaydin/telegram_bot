@@ -7,72 +7,135 @@ from database import log_chat, init_db
 
 load_dotenv()
 bot = telebot.TeleBot(os.getenv("TELEGRAM_TOKEN"))
-init_db() 
+init_db()
 
+
+# --- ÖZEL KOMUTLAR ---
+@bot.message_handler(commands=["start", "help"])
+def send_welcome(message):
+    bot.reply_to(
+        message,
+        "Elektrikli araç ve gömülü sistemler asistanı aktif. Teknik sorularınızı sorabilirsiniz.",
+    )
+
+
+@bot.message_handler(commands=["reset"])
+def reset_memory(message):
+    memory.clear_session(str(message.from_user.id))
+    bot.reply_to(message, "Oturum ve bellek verileri başarıyla sıfırlandı.")
+
+
+# --- YAPAY ZEKA BAĞLANTISI ---
 def get_ai_response(user_message, session):
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
     }
-    system_prompt = """Sen profesyonel bir Elektrikli Araç Geliştirme ve Gömülü Sistemler uzmanısın.
-
-    --- BÖLÜM 1: BELLEK VE BAĞLAM YÖNETİMİ ---
-    1. KURAL: Sana sağlanan 'Konuşma Geçmişi' ve 'Oturum Özeti' verilerini mutlaka analiz et ve dikkate al.
-    2. KURAL: Kullanıcı ile olan etkileşiminde geçmişteki teknik detayları (proje adı, motor modeli, kullanılan parçalar vb.) hatırla ve bunları tekrar sorma.
-    3. KURAL: Kullanıcıyı tanıdığını hissettir; daha önce paylaştığı teknik bilgileri temel alarak kişiselleştirilmiş ve tutarlı öneriler sun.
-
-    --- BÖLÜM 2: UZMANLIK VE ETİK KURALLAR ---
-    4. KURAL: Her zaman kullanıcının yazdığı dilde (Türkçe veya İngilizce) cevap ver.
-    5. KURAL: Sadece donanım, yazılım, gömülü sistemler, CAN Bus, BMS, motor sürücüler ve haberleşme protokolleri ile ilgili teknik soruları cevapla.
-    6. KURAL: Mühendislik dışındaki soruları 'Ben bir Elektrikli Araç ve Gömülü Sistemler uzmanıyım, bu konuda yardımcı olamam' diyerek reddet.
-    7. KURAL: Teknik, net, açıklayıcı ve çözüm odaklı ol. Mühendislik terminolojisini (akım, voltaj, PWM, PID vb.) doğru kullan.
-    8. KURAL: Tasarım süreçlerinde güvenlik ve verimlilik odaklı en iyi mühendislik pratiklerini (best practices) öner."""
-
-
-    summary = session.get('summary', 'Henüz özet yok.')
-    messages = [{"role": "system", "content": system_prompt + f"\n\n--- OTURUM ÖZETİ ---\n{summary}"}]
     
+    # Sıkılaştırılmış, doğrudan cevaba odaklanan sistem promptu
+    system_prompt = """Sen profesyonel bir Elektrikli Araç ve Gömülü Sistemler mühendisisin.
+
+    --- DİL KURALI ---
+    Kullanıcının yazdığı mesajın dili neyse, cevabını KESİNLİKLE aynı dilde ver. 
+    Eğer kullanıcı İngilizce yazdıysa İngilizce, Türkçe yazdıysa Türkçe cevapla.
+    Başka bir dilde cevap verme veya dili otomatik değiştirme.
+
+    --- TEKNİK KURALLAR ---
+    1. KESİNLİKLE GEREKSİZ LAF ETME, GİRİŞ VE SONUÇ CÜMLELERİNİ KISALT.
+    2. SADECE TEKNİK ÇÖZÜME ODAKLAN. Madde imleri (bullet points) veya kod blokları kullan.
+    3. Kullanıcı sorduğu soruya direkt cevap ver, lafı uzatma.
+    Sana sağlanan 'Konuşma Geçmişi' ve 'Oturum Özeti' verilerini mutlaka analiz et ve dikkate al.
+    4. Kullanıcı ile olan etkileşiminde geçmişteki teknik detayları (proje adı, motor modeli, kullanılan parçalar vb.) hatırla ve bunları tekrar sorma.
+    5. KURAL: Kullanıcıyı tanıdığını hissettir; daha önce paylaştığı teknik bilgileri temel alarak kişiselleştirilmiş ve tutarlı öneriler sun.
+    6. Sadece donanım, yazılım, gömülü sistemler, CAN Bus, BMS, motor sürücüler hakkında konuş.
+    7. Mühendislik dışındaki soruları reddet. Teknik, net ve çözüm odaklı ol."""
+
+    summary = session.get("summary", "Henüz özet yok.")
+    messages = [
+        {
+            "role": "system",
+            "content": system_prompt + f"\n\n--- OTURUM ÖZETİ ---\n{summary}",
+        }
+    ]
+
     if "history" in session:
-        messages.extend(session["history"])
-    
+        messages.extend(session["history"][-10:])
+
     messages.append({"role": "user", "content": user_message})
 
+    # Model ismi kararlı çalışan "google/gemma-2-9b-it:free" ile güncellendi.
     payload = {
-        "model": "google/gemma-4-26b-a4b-it:free",
+        "model": "google/gemma-2-9b-it:free",
         "messages": messages,
-        "temperature": 0.3
+        "temperature": 0.1,  # Daha kesin ve mekanik yanıtlar için düşürüldü.
     }
 
     try:
-        response = requests.post(url, headers=headers, json=payload)
+        response = requests.post(url, headers=headers, json=payload, timeout=15)
+        response_json = response.json()
+        
+        # Hata tespiti için API yanıtını konsola basar
+        print(f"API Yanıtı: {response.text}")
+        
         if response.status_code == 200:
-            return response.json()['choices'][0]['message']['content']
+            if "choices" in response_json and len(response_json["choices"]) > 0:
+                return response_json["choices"][0]["message"]["content"]
+            elif "error" in response_json:
+                return f"API Hatası (OpenRouter): {response_json['error'].get('message', 'Detay belirtilmedi')}"
+            else:
+                return "Beklenmedik API yanıt biçimi."
         else:
-            return "Teknik bir hata ile karşılaştım (API Hatası)."
-    except Exception:
-        return "Bağlantı sırasında bir hata oluştu."
+            return f"Teknik bir hata ile karşılaştım (API Hata Kodu: {response.status_code})."
+    except Exception as e:
+        return f"Bağlantı sırasında bir hata oluştu: {str(e)}"
 
+
+# --- MESAJ YÖNETİCİSİ ---
 @bot.message_handler(func=lambda message: True)
 def chat_handler(message):
-    user_id = str(message.from_user.id)
-    user_text = message.text
-    username = message.from_user.username or message.from_user.first_name 
-    
-    session = memory.load_sessions().get(user_id, {"history": [], "summary": "Henüz özet yok."})
-    
-    bot.send_chat_action(message.chat.id, 'typing')
-    
-    ai_reply = get_ai_response(user_text, session)
-    
-    memory.update_memory(user_id, user_text, ai_reply)
-    
-    if len(ai_reply) > 4000:
-        for i in range(0, len(ai_reply), 4000):
-            bot.reply_to(message, ai_reply[i:i+4000])
-    else:
-        bot.reply_to(message, ai_reply)
-    log_chat(username, user_text, ai_reply)
+    # Eğer mesaj metni yoksa (fotoğraf, dosya vb.) işlem yapma
+    if not message.text:
+        return
+
+    # Komut kontrolü (Sistem komutlarının AI'ya gitmesini engeller)
+    if message.text.startswith("/"):
+        return
+
+    try:
+        # Hata olasılıklarını engellemek için chat_id ilk sırada tanımlandı
+        chat_id = message.chat.id
+        user_id = str(message.from_user.id)
+        user_text = message.text
+        username = message.from_user.username or message.from_user.first_name
+
+        # Botun çalıştığını göstermek için animasyon tetiklenir
+        bot.send_chat_action(chat_id, "typing")
+
+        session = memory.load_sessions().get(user_id, {"history": [], "summary": "Henüz özet yok."})
+        
+        # AI yanıtı üretilir
+        ai_reply = get_ai_response(user_text, session)
+        
+        # Bellek güncellenir
+        memory.update_memory(user_id, user_text, ai_reply)
+
+        # Karakter sınırına göre mesaj bölme işlemi uygulanır
+        if len(ai_reply) > 4000:
+            for i in range(0, len(ai_reply), 4000):
+                bot.send_message(chat_id, ai_reply[i : i + 4000])
+        else:
+            bot.send_message(chat_id, ai_reply)
+
+        log_chat(username, user_text, ai_reply)
+
+    except Exception as e:
+        print(f"SİSTEM HATASI: {e}")
+        try:
+            bot.send_message(message.chat.id, f"Sistem hatası: {str(e)}")
+        except Exception as send_error:
+            print(f"Hata mesajı gönderilemedi: {send_error}")
+
 
 if __name__ == "__main__":
     print("Bot başarıyla başlatıldı!")
