@@ -2,3 +2,4 @@
 bot_database.db
 __pycache__/
 venv/
+*.xlsx
