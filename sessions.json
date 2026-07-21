@@ -3,75 +3,59 @@
         "history": [
             {
                 "role": "user",
-                "content": "\u0130zolasyon \u0130zleme nedir"
+                "content": "raporda Güç Kaynağı araması yapar mısın"
             },
             {
                 "role": "assistant",
-                "content": "**\u0130zolasyon \u0130zleme (Isolation Monitoring)**, y\u00fcksek voltajl\u0131 (HV) DC sistemin, arac\u0131n \u015fasisi (GND/Low Voltage) ile aras\u0131ndaki elektriksel yal\u0131t\u0131m\u0131n b\u00fct\u00fcnl\u00fc\u011f\u00fcn\u00fc s\u00fcrekli denetleyen g\u00fcvenlik mekanizmas\u0131d\u0131r.\n\nTeknik detaylar:\n\n### 1. Temel Ama\u00e7\n*   **Elektrik \u00c7arpmas\u0131 Korumas\u0131:** \u015easiye (ara\u00e7 g\u00f6vdesine) s\u0131zan bir ka\u00e7ak ak\u0131m\u0131n, yolcu veya teknisyen i\u00e7in \u00f6l\u00fcmc\u00fcl bir gerilim olu\u015fturmas\u0131n\u0131 engellemek.\n*   **Sistem G\u00fcvenli\u011fi:** Yal\u0131t\u0131m\u0131n zay\u0131flamas\u0131 durumunda (nem, kablo a\u015f\u0131nmas\u0131 vb.) sistemi g\u00fcvenli moda (Safe State) almak.\n\n### 2. \u00c7al\u0131\u015fma Prensibi (Y\u00f6ntemler)\n\u0130zolasyon direnci ($R_{iso}$), sistemin \u015fasiye kar\u015f\u0131 g\u00f6sterdi\u011fi diren\u00e7tir. Bu diren\u00e7 d\u00fc\u015ft\u00fck\u00e7e risk artar.\n\n*   **DC Sistemlerde (EV):** Genellikle **\"DC Isolation Monitor\"** ad\u0131 verilen bir cihaz kullan\u0131l\u0131r. Bu cihaz, sistem ile \u015fasi aras\u0131na d\u00fc\u015f\u00fck ak\u0131ml\u0131 bir sinyal enjekte eder ve \u015fasiye kar\u015f\u0131 olu\u015fan direnci \u00f6l\u00e7er.\n*   **AC Sistemlerde (\u015earj s\u0131ras\u0131nda):** \u015earj \u00fcnitesi (OBC) veya \u015farj istasyonu, sistemin \u015fasiye kar\u015f\u0131 izolasyonunu kontrol eder.\n\n### 3. Kritik Parametreler\n*   **\u0130zolasyon Direnci ($R_{iso}$):** Standartlara (ISO 6469 veya IEC 61851) g\u00f6re, sistemin belirli bir diren\u00e7 de\u011ferinin (\u00f6rne\u011fin $500 \\, \\Omega/V$ veya belirli bir $\\Omega$ e\u015fi\u011fi) alt\u0131na d\u00fc\u015fmesi durumunda hata verilir.\n*   **Hata E\u015fi\u011fi (Threshold):** Yaz\u0131l\u0131msal olarak belirlenen, sistemin \"tehlikeli\" kabul edildi\u011fi kritik diren\u00e7 de\u011feri.\n\n### 4. M\u00fchendislik Uygulamas\u0131\n*   **Sens\u00f6r Yerle\u015fimi:** \u0130zolasyon izleme devresi, batarya kutbu ile \u015fasi aras\u0131na seri olarak ba\u011flanm\u0131\u015f bir diren\u00e7 \u00fczerinden \u00f6l\u00e7\u00fcm yapar.\n*   **Hata Durumu (Fault Condition):** E\u011fer \u00f6l\u00e7\u00fclen diren\u00e7 belirlenen e\u015fi\u011fin alt\u0131na d\u00fc\u015ferse:\n    1.  **BMS/VCU** sistemine hata sinyali g\u00f6nderilir.\n    2.  **Kontakt\u00f6rler** a\u00e7\u0131l\u0131r (DC ak\u0131m\u0131 kesilir).\n    3.  S\u00fcr\u00fcc\u00fc (Inverter) ve \u015farj \u00fcnitesi kapat\u0131l\u0131r.\n\n**\u00d6zetle:** \u0130zolasyon izleme, \"Y\u00fcksek voltajl\u0131 sistemin \u015fasiye s\u0131z\u0131p s\u0131zmad\u0131\u011f\u0131n\u0131\" \u00f6l\u00e7en bir **g\u00fcvenlik n\u00f6bet\u00e7isidir.**"
+                "content": "Raporda yapılan tarama sonucunda \"Güç Kaynağı\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n*   **Ürün Adı:** Güç Kaynağı\n*   **Model/Detay:** 60V Programlanabilir DC Güç Kaynağı\n*   **Miktar:** 1 Adet\n*   **Kullanım Amacı:** Demirbaş\n*   **Kaynak:** Robotistan (Ürün bağlantısı mevcut)"
             },
             {
                 "role": "user",
-                "content": "yemek ne yesem"
+                "content": "fiyatı peki"
             },
             {
                 "role": "assistant",
-                "content": "M\u00fchendislik d\u0131\u015f\u0131 bir soru. Sadece elektrikli ara\u00e7 geli\u015ftirme, g\u00f6m\u00fcl\u00fc sistemler ve ilgili teknik konularda yard\u0131mc\u0131 olabilirim."
+                "content": "Raporda \"Güç Kaynağı\" için spesifik bir fiyat değeri (TL cinsinden) yer almamaktadır; sadece ürünün **Robotistan** üzerinden temin edildiği ve bir **demirbaş** olarak kaydedildiği belirtilmiştir."
             },
             {
                 "role": "user",
-                "content": "niyeee"
+                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
             },
             {
                 "role": "assistant",
-                "content": "Sistem mimarim ve \u00e7al\u0131\u015fma prensiplerim gere\u011fi, sadece **elektrikli ara\u00e7 geli\u015ftirme, g\u00f6m\u00fcl\u00fc sistemler, g\u00fc\u00e7 elektroni\u011fi, haberle\u015fme protokolleri ve otomotiv m\u00fchendisli\u011fi** alanlar\u0131ndaki teknik sorular\u0131 yan\u0131tlamak \u00fczere optimize edildim.\n\nM\u00fchendislik d\u0131\u015f\u0131 konular (yemek, genel k\u00fclt\u00fcr, g\u00fcnl\u00fck ya\u015fam vb.) uzmanl\u0131k alan\u0131m\u0131n d\u0131\u015f\u0131ndad\u0131r. Teknik bir sorunuz varsa devam edebiliriz."
+                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
             },
             {
                 "role": "user",
-                "content": "hi can you explain Can nBUS"
+                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
             },
             {
                 "role": "assistant",
-                "content": "**CAN Bus (Controller Area Network)**, otomotiv ve end\u00fcstriyel uygulamalarda kullan\u0131lan, mikrodenetleyiciler ve ECU'lar (Electronic Control Units) aras\u0131nda haberle\u015fmeyi sa\u011flayan, \u00e7oklu (multi-master) ve diferansiyel sinyal tabanl\u0131 bir seri haberle\u015fme protokol\u00fcd\u00fcr.\n\nTeknik detaylar:\n\n### 1. Fiziksel Katman (Physical Layer)\n*   **Diferansiyel Sinyalizasyon:** \u0130ki kablo \u00fczerinden \u00e7al\u0131\u015f\u0131r: **CAN High (CANH)** ve **CAN Low (CANL)**.\n*   **G\u00fcr\u00fclt\u00fc Ba\u011f\u0131\u015f\u0131kl\u0131\u011f\u0131 (Noise Immunity):** Veri, iki kablo aras\u0131ndaki voltaj fark\u0131 ($\\Delta V$) \u00fczerinden iletilir. D\u0131\u015far\u0131dan gelen elektromanyetik giri\u015fim (EMI) her iki kabloyu da ayn\u0131 anda etkiledi\u011fi i\u00e7in, diferansiyel fark de\u011fi\u015fmez ve veri bozulmaz.\n*   **Dominant ve Recessive Durumlar:**\n    *   **Dominant (Bask\u0131n):** CANH ve CANL aras\u0131ndaki fark\u0131n y\u00fcksek oldu\u011fu durumdur (Genellikle CANH $\\approx 3.5V$, CANL $\\approx 1.5V$). Bu durum, hattaki di\u011fer mesajlar\u0131 ezer (arbitration).\n    *   **Recessive (Pasif):** Her iki kablonun de yakla\u015f\u0131k $2.5V$ seviyesinde oldu\u011fu durumdur.\n\n### 2. Veri Yap\u0131s\u0131 (Data Frame)\nBir CAN mesaj\u0131 \u015fu b\u00f6l\u00fcmlerden olu\u015fur:\n*   **SOF (Start of Frame):** Mesaj\u0131n ba\u015flad\u0131\u011f\u0131n\u0131 belirten tek bitlik dominant sinyal.\n*   **Identifier (ID):** Mesaj\u0131n kimli\u011fidir. \u0130ki g\u00f6revi vard\u0131r:\n    1.  **Adresleme:** Mesaj\u0131n hangi ECU'ya gidece\u011fini belirler.\n    2.  **\u00d6ncelik (Arbitration):** Ayn\u0131 anda iki mesaj g\u00f6nderilirse, ID de\u011feri d\u00fc\u015f\u00fck olan mesaj (daha az '1' i\u00e7eren) hatt\u0131 kazan\u0131r.\n*   **Control Field:** Veri uzunlu\u011fu (DLC) gibi bilgileri i\u00e7erir.\n*   **Data Field:** As\u0131l verinin (0-8 byte aras\u0131) ta\u015f\u0131nd\u0131\u011f\u0131 b\u00f6l\u00fcmd\u00fcr.\n*   **CRC (Cyclic Redundancy Check):** Verinin iletim s\u0131ras\u0131nda bozulup bozulmad\u0131\u011f\u0131n\u0131 kontrol eden hata kontrol mekanizmas\u0131.\n*   **ACK (Acknowledgement):** Mesaj\u0131n ba\u015far\u0131yla al\u0131nd\u0131\u011f\u0131n\u0131 onaylayan bit.\n\n### 3. \u00c7al\u0131\u015fma Mekanizmas\u0131 (Arbitration)\nCAN Bus, **CSMA/CD+AMP** (Carrier Sense Multiple Access with Collision Detection and Arbitration on Message Priority) prensibiyle \u00e7al\u0131\u015f\u0131r.\n*   Birden fazla ECU ayn\u0131 anda mesaj g\u00f6nderirse, mesajlar ID de\u011ferlerine g\u00f6re yar\u0131\u015f\u0131r.\n*   ID de\u011feri daha k\u00fc\u00e7\u00fck olan mesaj \"Dominant\" oldu\u011fu i\u00e7in hatt\u0131 ele ge\u00e7irir, di\u011ferleri hatt\u0131 b\u0131rak\u0131r. Bu sayede kritik veriler (\u00f6rn: Fren/ABS verisi) her zaman \u00f6nceliklidir.\n\n### 4. Hata Y\u00f6netimi\n*   **Bit Stuffing:** Veri ak\u0131\u015f\u0131nda ard\u0131\u015f\u0131k 5 tane ayn\u0131 seviyeli bit gelirse, protokol otomatik olarak bir \"ters\" bit ekler. Bu, senkronizasyonu sa\u011flar.\n*   **Error Frames:** Bir hata alg\u0131land\u0131\u011f\u0131nda (CRC hatas\u0131, form hatas\u0131 vb.), hata mesaj\u0131 t\u00fcm a\u011fa yay\u0131l\u0131r ve hatal\u0131 mesaj ge\u00e7ersiz k\u0131l\u0131n\u0131r.\n\n### 5. CAN Varyantlar\u0131\n*   **Standard CAN (2.0A/B):** 8 byte veri kapasitesi.\n*   **CAN FD (Flexible Data-rate):** Daha y\u00fcksek veri h\u0131z\u0131 ve 64 byte'a kadar daha b\u00fcy\u00fck veri paketleri sa\u011flar (Modern EV projelerinde standartt\u0131r).\n\n**\u00d6zetle:** CAN Bus, d\u00fc\u015f\u00fck maliyetli, y\u00fcksek g\u00fcvenilirlikli ve g\u00fcr\u00fclt\u00fcl\u00fc ortamlarda (motor/inverter \u00e7evresi) m\u00fckemmel \u00e7al\u0131\u015fan, \u00f6ncelik tabanl\u0131 bir haberle\u015fme protokol\u00fcd\u00fcr."
+                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
             },
             {
                 "role": "user",
-                "content": "hi can you explain Can nBUS"
+                "content": "fiyat peki"
             },
             {
                 "role": "assistant",
-                "content": "It seems you might have a typo in your request (**\"nBUS\"**). In the context of automotive and embedded systems, you likely mean **CAN Bus**.\n\nIf you are referring to a specific proprietary bus or a specific variation (like a specialized internal bus in a specific ECU architecture), please provide more context. However, assuming you meant **CAN Bus**, here is the technical breakdown:\n\n### **CAN Bus (Controller Area Network) Overview**\n\nCAN Bus is a multi-master, differential-signaling, serial communication protocol designed for robust performance in electrically noisy environments (like an Electric Vehicle).\n\n#### **1. Physical Layer (Electrical Characteristics)**\n*   **Differential Signaling:** Uses two wires: **CAN High (CANH)** and **CAN Low (CANL)**. \n    *   **Dominant State:** The difference between CANH and CANL is high (typically $\\approx 2V$). This state \"wins\" the bus.\n    *   **Recessive State:** Both wires are at the same voltage (typically $\\approx 2.5V$).\n*   **Noise Immunity:** Because it uses the *difference* between wires, electromagnetic interference (EMI) affects both wires equally, leaving the differential voltage unchanged. This is critical near high-frequency switching components like **Inverters** or **DC/DC converters**.\n*   **Termination:** A **120 $\\Omega$ resistor** must be placed at each end of the bus to prevent signal reflections.\n\n#### **2. Data Link Layer (Frame Structure)**\nA standard CAN frame consists of:\n*   **SOF (Start of Frame):** Marks the beginning of a message.\n*   **Identifier (ID):** Defines the **priority** and the content of the message.\n*   **Control Field:** Contains the Data Length Code (DLC).\n*   **Data Field:** The actual payload (typically **8 bytes** for Standard CAN, up to **64 bytes** for CAN FD).\n*   **CRC (Cyclic Redundancy Check):** Ensures data integrity via error detection.\n*   **ACK (Acknowledgement):** Confirms the message was received correctly by other nodes.\n\n#### **3. Arbitration (Collision Resolution)**\nCAN Bus uses **CSMA/CD+AMP** (Carrier Sense Multiple Access with Collision Detection and Arbitration on Message Priority).\n*   If two ECUs transmit simultaneously, the one with the **lowest ID** (more dominant bits) wins the bus.\n*   The losing ECU immediately stops transmitting and waits for the next bus idle period.\n*   **Engineering Implication:** Critical real-time data (e.g., *Motor Torque Command* or *BMS Fault*) must be assigned a lower ID to ensure higher priority.\n\n#### **4. Error Handling & Robustness**\n*   **Bit Stuffing:** After 5 consecutive bits of the same polarity, the controller inserts a bit of opposite polarity to maintain synchronization.\n*   **Error Frames:** If a node detects a CRC or Form error, it broadcasts an error frame to invalidate the corrupted message.\n*   **Fault Confinement:** Nodes can enter \"Error Passive\" or \"Bus Off\" states if they detect too many errors, preventing a single faulty ECU from crashing the entire network.\n\n#### **5. CAN FD (Flexible Data-rate)**\nIn modern EV development, **CAN FD** is preferred over standard CAN because:\n*   **Higher Bandwidth:** Increases the bit rate during the data phase.\n*   **Larger Payload:** Increases data capacity from 8 bytes to **64 bytes**, reducing overhead for complex sensor data.\n\n**Summary for your development:**\nIf you are designing a system (e.g., connecting a BMS to a VCU), you must define the **Bit Rate**, **Termination**, and **Message Priority (ID assignment)** to ensure deterministic communication."
+                "content": "API Hatası (OpenRouter): Internal Server Error"
             },
             {
                 "role": "user",
-                "content": "Thanks"
+                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
             },
             {
                 "role": "assistant",
-                "content": "Teknik bir hata ile kar\u015f\u0131la\u015ft\u0131m (API Hata Kodu: 429)."
+                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
             },
             {
                 "role": "user",
-                "content": "merhaba"
+                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
             },
             {
                 "role": "assistant",
-                "content": "Merhaba. Teknik bir sorunuz veya \u00fczerinde \u00e7al\u0131\u015ft\u0131\u011f\u0131n\u0131z bir m\u00fchendislik problemi (CAN Bus, BMS, Motor S\u00fcr\u00fcc\u00fc, G\u00f6m\u00fcl\u00fc Sistemler vb.) varsa yard\u0131mc\u0131 olmaya haz\u0131r\u0131m."
-            },
-            {
-                "role": "user",
-                "content": "selma"
-            },
-            {
-                "role": "assistant",
-                "content": "Teknik bir hata ile kar\u015f\u0131la\u015ft\u0131m (API Hata Kodu: 404)."
-            },
-            {
-                "role": "user",
-                "content": "selam"
-            },
-            {
-                "role": "assistant",
-                "content": "Teknik bir hata ile kar\u015f\u0131la\u015ft\u0131m (API Hata Kodu: 404)."
+                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
             },
             {
                 "role": "user",
@@ -79,9 +63,25 @@
             },
             {
                 "role": "assistant",
-                "content": "Teknik bir hata ile kar\u015f\u0131la\u015ft\u0131m (API Hata Kodu: 404)."
+                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
+            },
+            {
+                "role": "user",
+                "content": "merhaba"
+            },
+            {
+                "role": "assistant",
+                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
+            },
+            {
+                "role": "user",
+                "content": "merhaba"
+            },
+            {
+                "role": "assistant",
+                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
             }
         ],
-        "summary": "Hen\u00fcz \u00f6zet yok."
+        "summary": "Oturum sıfırlandı. Yeni teknik süreç başladı."
     }
 }

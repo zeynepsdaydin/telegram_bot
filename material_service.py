@@ -8,10 +8,6 @@ EXCEL_FILE = "MUKAYESE RAPORU GENEL.xlsx"
 cached_data = None
 
 def load_excel_to_memory():
-    """
-    Excel dosyasını openpyxl kullanarak RAM'e yükler.
-    Pandas bağımlılığını ortadan kaldırır ve C++ derleyicisi gerektirmez.
-    """
     global cached_data
     if cached_data is not None:
         return cached_data
@@ -21,49 +17,76 @@ def load_excel_to_memory():
         return None
         
     try:
-        print("Excel verileri (openpyxl ile) hafızaya yükleniyor...")
-        wb = load_workbook(EXCEL_FILE, read_only=True, data_only=True)
+        print("Excel verileri (Garantili İndeks Eşleşmesi) hafızaya yükleniyor...")
+        # read_only=False yaparak indeks kaymalarının önüne geçiyoruz
+        wb = load_workbook(EXCEL_FILE, read_only=False, data_only=True)
         if 'Sheet1' not in wb.sheetnames:
             print("Hata: Sheet1 bulunamadı.")
             return None
             
         sheet = wb['Sheet1']
         
-        # Sizin belgenizin formatına göre:
-        # 4. satır (index 4) başlıkları içeriyor (ÜRÜN ADI, BİRİM, MİKTAR, LİNK, SEBEP, BİRİM FİYAT vb.)
-        # Veriler ise 5. satırdan (index 5) itibaren başlıyor.
+        # Tüm satırları bir listeye alalım ki indeksler %100 senkronize olsun
+        all_rows = list(sheet.iter_rows(values_only=True))
         
-        # Başlıkları çekelim
-        headers = [cell.value for cell in sheet[4]]
+        # 3. ve 4. satırları (0 tabanlı 2 ve 3) çekelim
+        row_3 = all_rows[2]  # Firma adları
+        row_4 = all_rows[3]  # "ÜRÜN ADI", "BİRİM FİYAT" başlıkları
         
-        # Kolon indekslerini bulalım
-        try:
-            prod_idx = headers.index("ÜRÜN ADI")
-            unit_idx = headers.index("BİRİM")
-            qty_idx = headers.index("MİKTAR")
-            link_idx = headers.index("LİNK")
-            reason_idx = headers.index("SEBEP")
-            # Excel'inizde "BİRİM FİYAT" sütunu HEPSİBURADA altında Unnamed sütunlarda kalabilir. 
-            # Güvenli olması için indeks bazlı (8. kolon, yani G/H civarı) veya başlık araması yapıyoruz.
-            price_idx = headers.index("BİRİM FİYAT") if "BİRİM FİYAT" in headers else 7 # Varsayılan 8. kolon (0 tabanlı 7)
-        except ValueError as ve:
-            print(f"Excel başlık eşleştirme hatası: {ve}. Varsayılan indeksler kullanılacak.")
-            # Varsayılan indeks atamaları (Excel şablonunuza göre)
-            prod_idx, unit_idx, qty_idx, link_idx, reason_idx, price_idx = 2, 3, 4, 5, 6, 7
+        # Temel sütun indekslerini bulalım
+        prod_idx, unit_idx, qty_idx, link_idx, reason_idx = 2, 3, 4, 5, 6
+        for idx, cell in enumerate(row_4):
+            if cell:
+                cell_upper = str(cell).upper().replace("İ", "I").strip()
+                if "URUN ADI" in cell_upper: 
+                    prod_idx = idx
+                elif "BIRIM" in cell_upper and "FIYAT" not in cell_upper: 
+                    unit_idx = idx
+                elif "MIKTAR" in cell_upper: 
+                    qty_idx = idx
+                elif "LINK" in cell_upper: 
+                    link_idx = idx
+                elif "SEBEP" in cell_upper: 
+                    reason_idx = idx
+
+        # Fiyat sütunlarını ve ait oldukları firmaları belirleyelim
+        price_columns = {}
+        for idx, cell in enumerate(row_4):
+            if cell:
+                cell_upper = str(cell).upper().replace("İ", "I").strip()
+                if "BIRIM FIYAT" in cell_upper or "FIYAT" in cell_upper:
+                    # En yakın geçerli firma adını bulmak için sola doğru tara
+                    firma_adi = "Belirtilmeyen Firma"
+                    for look_back in range(idx, -1, -1):
+                        if look_back < len(row_3) and row_3[look_back] is not None:
+                            firma_adi = str(row_3[look_back]).strip()
+                            break
+                    price_columns[idx] = firma_adi
 
         temp_data = []
-        # 5. satırdan itibaren tüm verileri oku
-        for row in sheet.iter_rows(min_row=5, values_only=True):
+        # 5. satırdan (index 4) itibaren verileri oku
+        for row in all_rows[4:]:
             if not row or len(row) <= prod_idx or row[prod_idx] is None:
                 continue
                 
+            fiyat_teklifleri = []
+            for col_idx, f_name in price_columns.items():
+                if col_idx < len(row) and row[col_idx] is not None:
+                    val = str(row[col_idx]).strip()
+                    if val and val.lower() != "none" and val != "0" and val != "0.0":
+                        if not val.endswith("TL"):
+                            val = f"{val} TL"
+                        fiyat_teklifleri.append(f"{f_name}: {val}")
+            
+            fiyat_ozeti = ", ".join(fiyat_teklifleri) if fiyat_teklifleri else "Fiyat belirtilmedi"
+
             temp_data.append({
                 "urun_adi": str(row[prod_idx]).strip(),
                 "birim": str(row[unit_idx]).strip() if row[unit_idx] is not None else "Belirtilmedi",
                 "miktar": str(row[qty_idx]).strip() if row[qty_idx] is not None else "Belirtilmedi",
                 "link": str(row[link_idx]).strip() if row[link_idx] is not None else "Belirtilmedi",
                 "sebep": str(row[reason_idx]).strip() if row[reason_idx] is not None else "Belirtilmedi",
-                "hepsiburada_fiyat": str(row[price_idx]).strip() if len(row) > price_idx and row[price_idx] is not None else "Belirtilmedi"
+                "fiyat_listesi": fiyat_ozeti
             })
             
         cached_data = temp_data
@@ -73,35 +96,25 @@ def load_excel_to_memory():
         print(f"Excel RAM'e yüklenirken hata oluştu: {e}")
         return None
 
-# Bot başlarken RAM yüklemesini tetikle
 load_excel_to_memory()
 
-
 def search_material_in_report(user_id, query):
-    """
-    RAM'deki listede arama yapar.
-    """
     data = load_excel_to_memory()
-    
     if not data:
         error_msg = "Hata: Excel veri tabanı yüklü değil."
         log_api_call(user_id, "search_material", query, error_msg)
         return {"error": error_msg}
 
     try:
-        # Arama terimini içeren malzemeleri filtrele
         match = [item for item in data if query.lower() in item["urun_adi"].lower()]
-        
         if not match:
             result_msg = "Aradığınız malzeme mukayese raporunda bulunamadı."
             log_api_call(user_id, "search_material", query, result_msg)
             return {"status": "not_found", "message": result_msg}
         
-        # İlk 3 eşleşmeyi al
         results = match[:3]
         log_api_call(user_id, "search_material", query, str(results))
         return {"status": "success", "data": results}
-
     except Exception as e:
         error_msg = f"Sorgu sırasında hata oluştu: {str(e)}"
         log_api_call(user_id, "search_material", query, error_msg)
