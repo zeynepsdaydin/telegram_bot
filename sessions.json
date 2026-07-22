@@ -3,85 +3,143 @@
         "history": [
             {
                 "role": "user",
-                "content": "raporda Güç Kaynağı araması yapar mısın"
+                "content": "gsm var mı"
             },
             {
                 "role": "assistant",
-                "content": "Raporda yapılan tarama sonucunda \"Güç Kaynağı\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n*   **Ürün Adı:** Güç Kaynağı\n*   **Model/Detay:** 60V Programlanabilir DC Güç Kaynağı\n*   **Miktar:** 1 Adet\n*   **Kullanım Amacı:** Demirbaş\n*   **Kaynak:** Robotistan (Ürün bağlantısı mevcut)"
+                "content": "* **SIM800L GSM/GPRS Modülü**\n    * **Miktar:** 2 ADET\n    * **Fiyat:** KOMPONENTÇİ: 1030.56 TL\n    * **Link:** [Ürüne Git](https://www.komponentci.net/sim800l-mini-gsm-gprs-modulu-imei-kayitli-pmu3435)\n    * **Sebep:** Araç içi haberleşme için kullanılacaktır.\n\n* **Harici GSM Anten**\n    * **Miktar:** 2 ADET\n    * **Fiyat:** ROBOTİSTAN: 402.22 TL\n    * **Link:** [Ürüne Git](https://www.robotistan.com/lte-g-821-harici-gsm-anten-6568)\n    * **Sebep:** GPS verisi için kullanılcaktır."
             },
             {
                 "role": "user",
-                "content": "fiyatı peki"
+                "content": "uno var mı"
             },
             {
                 "role": "assistant",
-                "content": "Raporda \"Güç Kaynağı\" için spesifik bir fiyat değeri (TL cinsinden) yer almamaktadır; sadece ürünün **Robotistan** üzerinden temin edildiği ve bir **demirbaş** olarak kaydedildiği belirtilmiştir."
+                "content": "* **Arduino Uno Klon**\n    * **Miktar:** 10 ADET\n    * **Fiyat:** ROBOTİSTAN: 227.72 TL\n    * **Link:** [Ürüne Git](https://www.robotistan.com/arduino-uno-r3-klon-usb-kablo-hediyeli-usb-chip-ch340#:~:text=Arduino%20UNO%2C%20mikrodenetleyici%20tabanlı%20projeler,elektronik%20bileşenlerle%20kolayca%20entegre%20edilebilir.)\n    * **Sebep:** Aks için kullanılacaktır."
             },
             {
                 "role": "user",
-                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
+                "content": "hava nasıl"
             },
             {
                 "role": "assistant",
-                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
+                "content": "* **Hata:** Talep edilen soru (hava durumu) mühendislik kapsamı dışındadır. Sadece donanım, yazılım, gömülü sistemler, CAN Bus, BMS ve motor sürücüler ile ilgili teknik sorulara yanıt verilebilir."
             },
             {
                 "role": "user",
-                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
+                "content": "en sevdiğin renk ne"
             },
             {
                 "role": "assistant",
-                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
+                "content": "* **Hata:** Talep edilen soru (renk tercihi) mühendislik kapsamı dışındadır. Sadece donanım, yazılım, gömülü sistemler, CAN Bus, BMS ve motor sürücüler ile ilgili teknik sorulara yanıt verilebilir."
             },
             {
                 "role": "user",
-                "content": "fiyat peki"
+                "content": "Lehim nasıl yapılır"
             },
             {
                 "role": "assistant",
-                "content": "API Hatası (OpenRouter): Internal Server Error"
+                "content": "* **Teknik Uygulama Adımları:**\n    * **Yüzey Hazırlığı:** Lehimlenecek komponent bacağı ve PCB pad'i temizlenmelidir. Oksitlenmiş yüzeyler için izopropil alkol kullanılmalıdır.\n    * **Isıl Transfer:** Havya ucu ısıtıldıktan sonra, ısıyı iletmek amacıyla hem komponent bacağına hem de pad'e çok az miktarda lehim teli değdirilmelidir.\n    * **Lehimleme:** Lehim teli, ısıtılmış noktaya değdirilerek sıvılaşması sağlanır. Sıvılaşan lehim, kılcal kuvvet etkisiyle yüzeye yayılmalıdır.\n    * **Soğuma:** Lehim donana kadar hareket ettirilmemelidir; aksi takdirde \"soğuk lehim\" (cold joint) hatası oluşur ve yüksek direnç/iletim kaybı meydana gelir.\n    * **Temizlik:** İşlem sonrası flux kalıntıları temizlenmelidir.\n\n* **İlgili Malzeme Listesi ve Maliyetler:**\n    * **Lehim Teli (60/40 Kalay-Kurşun):** 1 ADET | 771.84 TL | [ROBOCOMBO.COM](https://www.robocombo.com/200g-120mm-lehim-teli-60-kalay-40-kursun)\n    * **Sıvı Lehim (Mechanic Solder Paste):** 3 ADET | 419 TL | [HEPSİBURADA](https://www.hepsiburada.com/mechanic-krem-sivi-lehim-mechanic-solder-paste-35-gr-xg-40-183-derece-pm-HBC000001TJCL)\n    * **Havya Standı:** 2 ADET | 558.96 TL | [HEPSİBURADA](https://www.hepsiburada.com/havya-sehpasi-havya-standi-ltj217-metal-lehim-makara-ve-kalem-havya-tutuculu-110x160-mm-sungerli-pm-HBC0000BFU5D7)\n    * **Vakumlu Tutucu (Çip İşlemleri İçin):** 1 ADET | 586.67 TL | [DİRENÇNET](https://www.direnc.net/proskit-ms-121-vakumlu-tutucu)\n    * **Lehimli Makaron (İzolasyon İçin):** 1 ADET | 600 TL | [HEPSİBURADA](https://www.hepsiburada.com/teknoseli-lehimli-makaron-p-HBCV00001FCZ1R)"
             },
             {
                 "role": "user",
-                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
+                "content": "can bus nedir"
             },
             {
                 "role": "assistant",
-                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
+                "content": "* **Teknik Tanım:**\n    * **CAN Bus (Controller Area Network):** Mikrodenetleyiciler ve mikroişlemciler arasında, yüksek gürültülü ortamlarda (elektrikli araç motor sürücüleri, BMS vb.) güvenilir haberleşme sağlamak amacıyla geliştirilmiş, çoklu master/multi-master yapısına sahip, diferansiyel sinyal tabanlı bir seri haberleşme protokolüdür.\n    * **Çalışma Prensibi:** CAN High (CANH) ve CAN Low (CANL) olmak üzere iki kablo üzerinden diferansiyel voltaj farkı ile veri iletimi gerçekleştirir. Bu yapı, elektromanyetik parazitlere (EMI) karşı yüksek direnç sağlar.\n    * **Mesaj Yapısı:** Veriler \"Identifier\" (Mesaj kimliği/önceliği) ve \"Data Field\" (Veri alanı) olarak iki ana kısımdan oluşur. Mesaj önceliği, Identifier değerinin düşük olmasıyla belirlenir.\n    * **Hata Yönetimi:** CRC (Cyclic Redundancy Check) ile veri bütünlüğü kontrol edilir; hata tespit edildiğinde \"Error Frames\" ile sistem hatayı yönetir.\n\n* **İlgili Malzeme Listesi ve Maliyetler:**\n    * **MCP2515 Haberleşme Modülü:** 10 ADET | 100.97 TL | [ROBOTİSTAN](https://www.robotistan.com/mcp2515-canbus-spi-haberlesme-modulu)\n    * **IC-2551 HIGHSPEED CAN TRANSCEIVER 8SOIC MICROCHIP:** 10 ADET | 78.5751 TL | [ÖZDİSAN](https://www.ozdisan.com/p/driver-receiver-ve-transceiver-entegreleri-229/microchip-mcp2551-i-sn-335441)\n    * **SN65HVD1050DR - (VP1050) SOIC-8 CAN INTERFACE IC:** 3 ADET | 20.27 TL | [ULUTAŞELEKTRONİK](https://www.ulutaselektronik.com/urun/sn65hvd1050dr-vp1050-soic-8-can-interface-ic?srsltid=AfmBOooiWuOzbNybWfI1RdyCFyvZK7hUTCvtyo0y775cO4WEccp2SWlr)"
             },
             {
                 "role": "user",
-                "content": "raporda Lineer Voltaj Regülatör araması yapar mısın"
+                "content": "what is mcp"
             },
             {
                 "role": "assistant",
-                "content": "Raporda yapılan tarama sonucunda \"Lineer Voltaj Regülatör\" ile ilgili bulunan teknik detaylar aşağıdadır:\n\n* **Ürün Adı:** Lineer Voltaj Regülatör\n    * **Miktar:** 20 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Anahtarlama için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V 1A Lineer Voltaj Regülatör SOT223\n    * **Miktar:** 10 ADET\n    * **Link:** [direnc.net](https://www.direnc.net/ams1117-smd-3v3-dogrusal-voltaj-regulatoru)\n    * **Kullanım Amacı:** Sürücü için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi\n\n* **Ürün Adı:** AMS1117 3.3V Lineer Voltaj Regülatörü – SOT223\n    * **Miktar:** 5 ADET\n    * **Link:** [robotistan.com](https://www.robotistan.com/ams1117-33-sot23)\n    * **Kullanım Amacı:** BMS master kart için kullanılacaktır.\n    * **Fiyat Listesi:** Fiyat belirtilmedi"
+                "content": "* **Teknik Tanım:**\n    * **MCP (Microchip Technology Corporation):** Yarı iletken endüstrisinde dünya çapında tanınan, özellikle gömülü sistemler, mikrodenetleyiciler (MCU), CAN Bus kontrolcüleri ve analog/dijital sinyal işleme entegreleri konusunda uzmanlaşmış bir üreticidir.\n    * **Gömülü Sistemlerdeki Rolü:** MCP serisi ürünler, elektrikli araç (EV) sistemlerinde kritik öneme sahiptir. Örneğin, MCP2515 gibi bir CAN kontrolcüsü, SPI protokolü üzerinden mikrodenetleyici ile haberleşarak CAN Bus ağını yönetir.\n    * **Kullanım Alanları:**\n        * **CAN Kontrolcüleri:** CAN haberleşme protokolünü donanımsal olarak yöneten entegreler.\n        * **Analog-Dijital Dönüştürücüler (ADC):** Sensör verilerini (akım, voltaj, sıcaklık) dijital veriye dönüştüren birimler.\n        * **Mikrodenetleyiciler:** Motor sürücü kontrolü veya BMS mantık yürütme süreçlerini yöneten işlemciler.\n\n* **İlgili Malzeme Listesi ve Maliyetler:**\n    * **MCP2515 CAN Bus Modülü:** 10 ADET | 100.97 TL | [ROBOTİSTAN](https://www.robotistan.com/mcp2515-canbus-spi-haberlesme-modulu)\n    * **MCP2551 CAN Transceiver:** 10 ADET | 78.5751 TL | [ÖZDİSAN](https://www.ozdisan.com/p/driver-receiver-ve-transceiver-entegreleri-229/microchip-mcp2551-i-sn-335441)"
             },
             {
                 "role": "user",
-                "content": "merhaba"
+                "content": "english please"
             },
             {
                 "role": "assistant",
-                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
+                "content": "OpenRouter Hatası (429): Provider returned error"
             },
             {
                 "role": "user",
-                "content": "merhaba"
+                "content": "english please"
             },
             {
                 "role": "assistant",
-                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
+                "content": "* **Technical Definition:**\n    * **MCP (Microchip Technology Corporation):** A leading semiconductor manufacturer specializing in embedded systems, microcontrollers (MCUs), CAN Bus controllers, and analog/digital signal processing integrated circuits (ICs).\n    * **Role in Embedded Systems:** MCP series components are critical in Electric Vehicle (EV) architectures. For instance, the MCP2515 acts as a CAN controller that manages CAN Bus communication via the SPI protocol to interface with a microcontroller.\n    * **Key Application Areas:**\n        * **CAN Controllers:** Hardware-level management of the CAN protocol (e.g., MCP2515).\n        * **Analog-to-Digital Converters (ADC):** Converting sensor data (current, voltage, temperature) into digital signals for BMS or Motor Controller processing.\n        * **Microcontrollers:** Managing logic for motor driver control or Battery Management System (BMS) algorithms.\n\n* **Relevant Material List and Costs:**\n    * **MCP2515 CAN Bus Module:** 10 UNITS | 100.97 TL | [ROBOTİSTAN](https://www.robotistan.com/mcp2515-canbus-spi-haberlesme-modulu)\n    * **MCP2551 CAN Transceiver:** 10 UNITS | 78.5751 TL | [ÖZDİSAN](https://www.ozdisan.com/p/driver-receiver-ve-transceiver-entegreleri-229/microchip-mcp2551-i-sn-335441)"
             },
             {
                 "role": "user",
-                "content": "merhaba"
+                "content": "thanks"
             },
             {
                 "role": "assistant",
-                "content": "Teknik bir hata ile karşılaştım (API Hata Kodu: 429)."
+                "content": "* **Technical Note:**\n    * You are welcome. Please provide specific technical queries regarding CAN Bus architecture, BMS logic, motor driver control algorithms, or embedded firmware implementation to proceed."
             }
         ],
-        "summary": "Oturum sıfırlandı. Yeni teknik süreç başladı."
+        "summary": "Oturum sıfırlandı. Yeni teknik süreç başladı.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+    },
+    "7141518092": {
+        "history": [
+            {
+                "role": "user",
+                "content": "Aks diyince aklına ne geliyor"
+            },
+            {
+                "role": "assistant",
+                "content": "Bu soru mühendislik kapsamı dışındadır. Sadece elektrikli araçlar, gömülü sistemler, CAN Bus, BMS ve motor sürücüleri üzerine teknik sorularınızı yanıtlayabilirim."
+            },
+            {
+                "role": "user",
+                "content": "Ney bu ney"
+            },
+            {
+                "role": "assistant",
+                "content": "Bu bir mühendislik projesi için hazırlanan malzeme listesi ve maliyet dökümüdür. Proje kapsamında kablo düzenleme ve izolasyon işlemleri için gerekli olan bileşenlerin detayları aşağıdadır:\n\n* **Kablo Bağı**\n    * Miktar: 5 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 66.5 TL\n    * Link: [https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV0000VG20W](https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV0000VG20W)\n\n* **Cırt Cırt Kablo Düzenleyici**\n    * Miktar: 1 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 611.8 TL\n    * Link: [https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0](https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0)\n\n* **Yapışkanlı Kablo Kanalı**\n    * Miktar: 2 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 199.9 TL\n    * Link: [https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ](https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ)\n\n* **Kuyumcu Etiketi**\n    * Miktar: 2 ADET\n    * Sebep: Mükerrer\n    * Fiyat: HEPSİBURADA: 100 TL\n    * Link: [https://www.hepsiburada.com/barcodex-72x-10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ](https://www.hepsiburada.com/barcodex-72x-10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ)\n\n* **Makaron**\n    * Miktar: 1 ADET\n    * Sebep: Kablo ek yerlerini izole etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 399.9 TL\n    * Link: [https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup](https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup)"
+            },
+            {
+                "role": "user",
+                "content": "Bu nedir"
+            },
+            {
+                "role": "assistant",
+                "content": "Bu, projeniz için gerekli olan malzeme listesinin (BOM - Bill of Materials) güncel dökümüdür:\n\n*   **Kablo Bağı**: 5 ADET | [Link](https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV00000VG20W) | HEPSİBURADA: 66.5 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Cırt Cırt Kablo Düzenleyici**: 1 ADET | [Link](https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0) | HEPSİBURADA: 611.8 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Yapışkanlı Kablo Kanalı**: 2 ADET | [Link](https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ) | HEPSİBURADA: 199.9 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Kuyumcu Etiketi**: 2 ADET | [Link](https://www.hepsiburada.com/barcodex-72x10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ) | HEPSİBURADA: 100 TL | Mükerrer\n*   **Makaron**: 1 ADET | [Link](https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup) | HEPSİBURADA: 399.9 TL | Kablo ek yerlerini izole etmek için kullanılacaktır."
+            },
+            {
+                "role": "user",
+                "content": "Ne alaka ??"
+            },
+            {
+                "role": "assistant",
+                "content": "OpenRouter Hatası (429): Provider returned error"
+            }
+        ],
+        "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+    },
+    "6856525168": {
+        "history": [
+            {
+                "role": "user",
+                "content": "mcp nedir"
+            },
+            {
+                "role": "assistant",
+                "content": "MCP (Microchip Controller Peripheral) bağlamında, genellikle **MCP2515** CAN Bus denetleyicisi kastedilmektedir. Bu bileşen, SPI arayüzü üzerinden mikrodenetleyiciler ile CAN hattı arasında köprü görevi gören bir CAN kontrolcüsüdür.\n\n**Teknik Özellikler ve Kullanım Alanları:**\n*   **Protokol:** CAN 2.0B (Standard ve Extended frame desteği).\n*   **Arayüz:** SPI (Serial Peripheral Interface) üzerinden haberleşme.\n*   **Fonksiyon:** Veri paketlerini (frame) CAN protokol standartlarına uygun şekilde paketler ve fiziksel katman (transceiver) için hazır hale getirir.\n*   **Uygulama:** Gömülü sistemlerde, araç içi haberleşma ağlarında (In-Vehicle Networking) düğüm noktası oluşturmak için kullanılır.\n\n**Proje Envanter Verileri:**\n*   **MCP2515 Haberleşme Modülü:** 10 adet, 100.97 TL (Robotistan), araç içi haberleşme için.\n*   **DIP18 MCP2515:** 6 adet, 99.76 TL (Direnc.net), AKS kartı kullanımı için.\n*   **MCP2551 High-Speed CAN Transceiver:** 10 adet (3'ü alındı, 7'si alınacak), 78.5751 TL (Özdisan), sürücü katmanı için."
+            },
+            {
+                "role": "user",
+                "content": "lehim nasıl yapılır"
+            },
+            {
+                "role": "assistant",
+                "content": "Elektronik devre kartları (PCB) ve gömülü sistem bileşenleri (MCP2515, MCP2551 vb.) üzerinde güvenilir bir bağlantı sağlamak için profesyonel lehimleme süreci şu adımlardan oluşur:\n\n**Teknik Uygulama Adımları:**\n*   **Hazırlık:** Lehim yapılacak yüzeyin ve bileşen bacaklarının (pad/pin) oksitlenmeden temizlenmesi gerekir.\n*   **Isıtma:** Havya ucu, lehim telinin erime sıcaklığına (genellikle 350°C - 370°C) getirilmelidir. Isı, hem lehim yapılacak bileşen bacağına hem de PCB padine aynı anda uygulanmalıdır.\n*   **Lehimleme:** Isıtılan noktaya lehim teli değdirilerek sıvılaşması sağlanır. Lehim, yüzey gerilimi sayesinde kendiliğinden yayılmalıdır.\n*   **Soğuma:** Lehim donana kadar hareket ettirilmemelidir; aksi takdirde \"soğuk lehim\" (cold joint) oluşur ve yüksek direnç/iletim kaybına yol açar.\n*   **Temizlik:** İşlem sonrası flux (lehim pastası) kalıntıları izopropil alkol ile temizlenmelidir.\n\n**Proje Envanterindeki Lehimleme Ekipmanları:**\n*   **Lehim Teli:** 1 adet, 771.84 TL (ROBOCOMBO.COM) - 60% Kalay, 40% Kurşun.\n*   **Sıvı Lehim (Flux Paste):** 3 adet, 419 TL (HEPSİBURADA) - 35 gr, 183°C.\n*   **Vakumlu Tutucu (Desoldering Pump):** 1 adet, 586.67 TL (DİRENÇNET) - Çip ve hata düzeltme işlemleri için.\n*   **Havya Standı:** 2 adet, 558.96 TL (HEPSİBURADA) - Güvenli çalışma alanı için.\n*   **Lehimli Makaron:** 1 adet, 600 TL (HEPSİBURADA) - Kablo izolasyonu için."
+            }
+        ],
+        "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
     }
 }
