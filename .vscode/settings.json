@@ -1,0 +1,10 @@
+{
+  "liveServer.settings.root": "/web_client",
+  "liveServer.settings.ignoreFiles": [
+    "**/*.db",
+    "**/*.json",
+    "**/*.log",
+    "**/__pycache__/**",
+    "**/venv/**"
+  ]
+}

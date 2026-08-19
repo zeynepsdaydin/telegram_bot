@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI - İzleme ve Yönetim Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans"
+  >
+    <!-- Header -->
+    <header
+      class="bg-slate-900 border-b border-slate-800 px-6 py-4 flex justify-between items-center"
+    >
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-chart-line text-indigo-400 text-xl"></i>
+        <h1 class="font-semibold text-lg text-slate-100">
+          İzleme ve Yönetim Paneli
+        </h1>
+      </div>
+      <button
+        onclick="loadAllData()"
+        class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium text-slate-300 transition"
+      >
+        <i class="fa-solid fa-rotate-right mr-1"></i> Yenile
+      </button>
+    </header>
+
+    <!-- Ana İçerik -->
+    <main class="flex-1 p-6 max-w-7xl w-full mx-auto space-y-6">
+      <!-- İstatistik Kartları -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+          <span class="text-xs text-slate-400 font-medium">Toplam Mesaj</span>
+          <p id="statMessages" class="text-2xl font-bold text-indigo-400 mt-1">
+            -
+          </p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+          <span class="text-xs text-slate-400 font-medium"
+            >Tekil Kullanıcı</span
+          >
+          <p id="statUsers" class="text-2xl font-bold text-emerald-400 mt-1">
+            -
+          </p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+          <span class="text-xs text-slate-400 font-medium"
+            >RAG / Tool Çağrıları</span
+          >
+          <p id="statTools" class="text-2xl font-bold text-amber-400 mt-1">-</p>
+        </div>
+      </div>
+
+      <!-- Çift Kolon: Kullanıcılar / Döküm & Tool Logları -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Sol: Kullanıcı Listesi -->
+        <div
+          class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col h-[600px]"
+        >
+          <h2
+            class="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-users text-indigo-400"></i> Kullanıcılar
+          </h2>
+          <div
+            id="userList"
+            class="flex-1 overflow-y-auto space-y-2 pr-1"
+          ></div>
+        </div>
+
+        <!-- Sağ: Seçili Kullanıcı Konuşma Dökümü & Özeti -->
+        <div
+          class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col h-[600px]"
+        >
+          <h2
+            class="text-sm font-semibold text-slate-200 mb-2 flex items-center gap-2"
+          >
+            <i class="fa-solid fa-comments text-indigo-400"></i> Konuşma Dökümü
+            & Oturum Belleği
+          </h2>
+          <!-- Oturum Özeti -->
+          <div
+            id="sessionSummaryBox"
+            class="bg-slate-950 border border-slate-800 p-3 rounded-lg text-xs text-slate-300 mb-3 hidden"
+          >
+            <span class="font-bold text-indigo-400 block mb-1"
+              >Bellek / Teknik Bağlam Özeti:</span
+            >
+            <p id="sessionSummaryText" class="whitespace-pre-line"></p>
+          </div>
+          <!-- Mesaj Akışı -->
+          <div
+            id="chatHistoryBox"
+            class="flex-1 overflow-y-auto space-y-3 p-2 bg-slate-950 rounded-lg border border-slate-800 text-xs"
+          >
+            <p class="text-slate-500 text-center mt-10">
+              Dökümünü incelemek için soldan bir kullanıcı seçin.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alt Kısım: RAG / Tool Çağrı Logları -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+        <h2
+          class="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2"
+        >
+          <i class="fa-solid fa-clock-rotate-left text-amber-400"></i> Son Tool
+          / Excel RAG Çağrıları
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead
+              class="bg-slate-950 text-slate-400 border-b border-slate-800"
+            >
+              <tr>
+                <th class="p-2">Tarih</th>
+                <th class="p-2">User ID</th>
+                <th class="p-2">İşlem</th>
+                <th class="p-2">Sorgu</th>
+                <th class="p-2">Sonuç</th>
+              </tr>
+            </thead>
+            <tbody id="logsTableBody" class="divide-y divide-slate-800"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const API_BASE = "http://127.0.0.1:8000/api/v1/admin";
+
+      async function loadAllData() {
+        loadStats();
+        loadUsers();
+        loadLogs();
+      }
+
+      async function loadStats() {
+        const res = await fetch(`${API_BASE}/stats`);
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById("statMessages").textContent =
+            data.total_messages;
+          document.getElementById("statUsers").textContent = data.total_users;
+          document.getElementById("statTools").textContent =
+            data.total_tool_calls;
+        }
+      }
+
+      async function loadUsers() {
+        const res = await fetch(`${API_BASE}/users`);
+        const userList = document.getElementById("userList");
+        userList.innerHTML = "";
+
+        if (res.ok) {
+          const users = await res.json();
+          users.forEach((u) => {
+            const div = document.createElement("div");
+            div.className =
+              "p-3 bg-slate-950 hover:bg-slate-800 border border-slate-800 rounded-lg cursor-pointer transition";
+            div.innerHTML = `
+              <div class="flex justify-between items-center">
+                <span class="font-medium text-xs text-indigo-300">${u.username || "Anonymous"}</span>
+                <span class="text-[10px] text-slate-500">${u.total_messages} mesaj</span>
+              </div>
+              <p class="text-[10px] text-slate-500 font-mono mt-1">${u.user_id}</p>
+            `;
+            div.onclick = () => loadUserDetail(u.user_id);
+            userList.appendChild(div);
+          });
+        }
+      }
+
+      async function loadUserDetail(userId) {
+        const res = await fetch(`${API_BASE}/user/${userId}/history`);
+        const historyBox = document.getElementById("chatHistoryBox");
+        const summaryBox = document.getElementById("sessionSummaryBox");
+        const summaryText = document.getElementById("sessionSummaryText");
+
+        historyBox.innerHTML = "";
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data.summary) {
+            summaryBox.classList.remove("hidden");
+            summaryText.textContent = data.summary;
+          } else {
+            summaryBox.classList.add("hidden");
+          }
+
+          data.history.forEach((msg) => {
+            historyBox.innerHTML += `
+              <div class="mb-2">
+                <p class="text-indigo-400 font-semibold mb-0.5">👤 Kullanıcı (${msg.timestamp}):</p>
+                <div class="bg-slate-900 p-2 rounded border border-slate-800 text-slate-200 mb-1">${msg.user_question}</div>
+                <p class="text-emerald-400 font-semibold mb-0.5">🤖 Asistan:</p>
+                <div class="bg-slate-900 p-2 rounded border border-slate-800 text-slate-300 whitespace-pre-wrap">${msg.bot_response}</div>
+              </div>
+              <hr class="border-slate-800 my-2">
+            `;
+          });
+          historyBox.scrollTop = historyBox.scrollHeight;
+        }
+      }
+
+      async function loadLogs() {
+        const res = await fetch(`${API_BASE}/logs?limit=20`);
+        const tbody = document.getElementById("logsTableBody");
+        tbody.innerHTML = "";
+
+        if (res.ok) {
+          const logs = await res.json();
+          logs.forEach((log) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td class="p-2 text-slate-500 whitespace-nowrap">${log.timestamp ? log.timestamp.substring(0, 19) : "-"}</td>
+              <td class="p-2 font-mono text-slate-400">${log.user_id}</td>
+              <td class="p-2 text-indigo-400 font-medium">${log.action}</td>
+              <td class="p-2 text-slate-300">${log.query}</td>
+              <td class="p-2 text-slate-400 max-w-xs truncate" title="${log.result}">${log.result}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      }
+
+      window.onload = loadAllData;
+    </script>
+  </body>
+</html>

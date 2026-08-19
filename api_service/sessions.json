@@ -1,0 +1,946 @@
+{
+  "8963478672": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri ile ilgili konularda yardımcı olabilirim."
+      },
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "⏳ Şu an yoğunluk var (ücretsiz model kapasitesi doldu). Birkaç dakika sonra tekrar dener misin?"
+      },
+      {
+        "role": "user",
+        "content": "[FOTOĞRAF ANALİZİ]: bu nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* **Bileşen Tanımı:** ESP32-WROOM-32D serisi, Espressif Systems tarafından üretilen, üzerinde Wi-Fi ve Bluetooth (Classic + BLE) entegre edilmiş bir mikrodenetleyici modülüdür.\n* **Teknik Özellikler:**\n    * **MCU:** Çift çekirdekli (Dual-core) Xtensa® 32-bit LX6 mikrodenetleyici.\n    * **Kablosiz İletişim:** 2.4 GHz Wi-Fi (802.11 b/g/n) ve Bluetooth v4.2 BR/EDR/BLE.\n    * **Bellek:** Dahili ROM, SRAM ve genellikle harici Flash bellek barındırır.\n    * **Pin Yapısı:** Geniş GPIO (General Purpose Input/Output) setine sahiptir; ADC, DAC, UART, SPI, I2C ve PWM gibi çevre birimlerini destekler.\n* **Kullanım Alanları:**\n    * IoT (Nesnelerin İnterneti) cihazları.\n    * Kablosuz sensör düğümleri.\n    * Endüstriyel kontrol sistemleri (Gateway olarak).\n    * Gömülü sistemlerde kablosuz haberleşme modülü."
+      },
+      {
+        "role": "user",
+        "content": "raporda kablo sökücü var mı"
+      },
+      {
+        "role": "assistant",
+        "content": "⏳ Şu an yoğunluk var (ücretsiz model kapasitesi doldu). Birkaç dakika sonra tekrar dener misin?"
+      },
+      {
+        "role": "user",
+        "content": "⏳ Şu an yoğunluk var (ücretsiz model kapasitesi doldu). Birkaç dakika sonra tekrar dener misin?"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri ile ilgili teknik konularda yardımcı olabilirim."
+      },
+      {
+        "role": "user",
+        "content": "raporda kablo sökücü var mı"
+      },
+      {
+        "role": "assistant",
+        "content": "Raporda kablo sökücü bulunmamaktadır. Mevcut ürün listesi aşağıdadır:\n\n* **Kablo Bağı** (3 ADET)\n    * Fiyat listesi: HEPSİBURADA: 140 TL\n    * Link: https://www.hepsiburada.com/zenith-3-6-x-250-mm-kablo-bagi-plastik-cirt-kelepce-paket-100adet-p-HBCV00000FAIGZ\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* **Kablo Bağı** (5 ADET)\n    * Fiyat listesi: HEPSİBURADA: 66.5 TL\n    * Link: https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV00000VG20W\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* **Cırt Cırt Kablo Düzenleyici** (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 611.8 TL\n    * Link: https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* **Yapışkanlı Kablo Kanalı** (2 ADET)\n    * Fiyat listesi: HEPSİBURADA: 199.9 TL\n    * Link: https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* **Makaron** (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 399.9 TL\n    * Link: https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup\n    * Sebep: Kablo ek yerlerini izole etmek için kullanılacaktır."
+      },
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "CAN Bus (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilikle haberleşme sağlayan, diferansiyel sinyal tabanlı bir seri haberleşme protokolüdür.\n\n*   **Çoklu Cihaz Desteği:** Tek bir veri hattı (Bus) üzerinden birden fazla düğüm (node) haberleşebilir.\n*   **Diferansiyel Sinyalizasyon:** CAN High ve CAN Low hatları kullanılarak elektromanyetik gürültüden (EMI) etkilenme minimize edilir.\n*   **Önceliklendirme:** Mesaj tabanlı bir yapıya sahiptir; düşük ID'li mesajlar yüksek önceliğe sahiptir ve hattı domine eder.\n*   **Hata Yönetimi:** Hata algılama, hata izolasyonu ve hata kurtarma mekanizmaları sayesinde otomotiv ve endüstriyel sistemlerde standarttır.\n\n[EXCEL RAPORUNDAN GELEN CANLI VERİ]:\n\n* **128GB SD Kart** (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 1150 TL\n    * Link: https://www.hepsiburada.com/kingston-sdcs2-128gb-128gb-micsdxc-canvas-select-plus-100r-a1-c10-card-adp-hafiza-karti-pm-HB00000P7DD7\n    * Sebep: Veri kaydı için kullanılacaktır.\n\n* **32GB SD Kart** (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 949 TL\n    * Link: https://www.hepsiburada.com/kingston-32gb-microsdhc-canvas-select-plus-100r-a1-c10-card-adapter-32gb-sdcs2-pm-HB00000P7DCX\n    * Sebep: Veri kaydı için kullanılacaktır.\n\n* **MCP2515 Haberleşme Modülü** (10 ADET)\n    * Fiyat listesi: ROBOTİSTAN: 100.97 TL\n    * Link: https://www.robotistan.com/mcp2515-canbus-spi-haberlesme-modulu\n    * Sebep: Araç içi haberleşme için kullanılacaktır.\n\n* **IC-2551 HIGHSPEED CAN TRANSCEIVER 8SOIC MICROCHIP** (10 ADET)\n    * Fiyat listesi: HEPSİBURADA: 3 tane alındı 7 tane alınacak TL, ÖZDİSAN: 78.5751 TL\n    * Link: https://www.ozdisan.com/p/driver-receiver-ve-transceiver-entegreleri-229/microchip-mcp2551-i-sn-335441\n    * Sebep: Sürücü için kullanılacaktır.\n\n* **SN65HVD1050DR - (VP1050) SOIC-8 CAN INTERFACE IC** (3 ADET)\n    * Fiyat listesi: ULUTAŞELEKTRONİK: 20.27 TL\n    * Link: https://www.ulutaselektronik.com/urun/sn65hvd1050dr-vp1050-soic-8-can-interface-ic?srsltid=AfmBOooiWuOzbNybWfI1RdyCFyvZK7hUTCvtyo0y775cO4WEccp2SWlr\n    * Sebep: BMS master kart için kullanılacaktır."
+      },
+      {
+        "role": "user",
+        "content": "ne alaka ürünler"
+      },
+      {
+        "role": "assistant",
+        "content": "CAN Bus protokolü ile paylaşılan ürünler arasındaki teknik ilişki şöyledir:\n\n* **MCP2515 Haberleşme Modülü:** CAN Bus protokolünü SPI üzerinden mikrodenetleyicilere (Arduino vb.) aktaran kontrolcü (controller) birimidir.\n* **IC-2551 Transceiver:** CAN Bus hattındaki diferansiyel sinyalleri (CAN High/Low) fiziksel katmanda işleyen alıcı-verici (transceiver) entegresidir.\n* **SN65HVD1050DR:** CAN Bus haberleşmesi için kullanılan bir diğer fiziksel katman (transceiver) entegresidir; BMS master kartında sinyal iletimini sağlar.\n* **SD Kartlar:** CAN Bus üzerinden gelen yüksek frekanslı veri paketlerinin (log verisi) kalıcı olarak kaydedilmesi (data logging) için kullanılır."
+      },
+      {
+        "role": "user",
+        "content": "batarya yönetim sistemi nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "Batarya Yönetim Sistemi (BMS - Battery Management System), batarya paketinin güvenli, verimli ve uzun ömürlü çalışmasını sağlamak için hücrelerin durumunu izleyen ve kontrol eden elektronik bir sistemdir.\n\n* **Hücre İzleme (Cell Monitoring):** Her bir hücrenin voltaj değerini sürekli takip eder.\n* **Dengeleme (Cell Balancing):** Hücreler arasındaki voltaj farklarını minimize etmek için enerjiyi dengeler (Pasif veya Aktif dengeleme).\n* **Koruma (Protection):** Aşırı akım (over-current), aşırı voltaj (over-voltage), düşük voltaj (under-voltage) ve aşırı sıcaklık (over-temperature) durumlarında sistemi kapatarak bataryayı korur.\n* **SOC ve SOH Hesaplama:**\n    * **SOC (State of Charge):** Bataryanın doluluk oranını hesaplar.\n    * **SOH (State of Health):** Bataryanın sağlık durumunu ve kapasite kaybını takip eder.\n    * **SOF (State of Function):** Bataryanın anlık güç verme kapasitesini belirler.\n* **Termal Yönetim:** Batarya sıcaklığını izleyerek soğutma sistemlerini tetikler.\n* **Haberleşme:** Batarya verilerini CAN Bus veya UART gibi protokoller üzerinden araç kontrol ünitesine (VCU) iletir."
+      },
+      {
+        "role": "user",
+        "content": "[FOTOĞRAF ANALİZİ]: nerelerde kullanılır"
+      },
+      {
+        "role": "assistant",
+        "content": "Görseldeki bileşen **Espressif ESP32-WROOM-32D** modülüdür. Bu modül, içinde dahili Wi-Fi ve Bluetooth (Classic + BLE) barındıran, yüksek performanslı bir mikrodenetleyici (SoC) çözümüdür.\n\n**Kullanım Alanları:**\n\n*   **Nesnelerin İnterneti (IoT):** Kablosuz veri iletimi gerektiren akıllı ev sistemleri, sensör düğümleri ve uzaktan kontrol cihazları.\n*   **Elektrikli Araç (EV) Sistemleri:**\n    *   **Telematik Üniteleri:** Aracın konum, hız ve batarya verilerini bulut sunucularına (Cloud) kablosuz iletmesi.\n    *   **BMS Veri İzleme:** Batarya verilerinin yerel bir ağ üzerinden (Wi-Fi) mobil uygulama veya merkezi kontrol ünitesi ile izlenmesi.\n*   **Endüstriyel Otomasyon:** Kablosuz haberleşme gerektiren endüstriyel sensör ağları ve veri toplama sistemleri.\n*   **Gömülü Sistemler:** Bluetooth üzerinden mobil uygulama ile kontrol edilen akıllı cihazlar ve düşük güç tüketimli kablosuz düğümler."
+      }
+    ],
+    "summary": "Oturum sıfırlandı. Yeni teknik süreç başladı.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir\n- BMS (Batarya Yönetim Sistemi) yapılandırması: BMS varmı\n- Motor ve motor sürücü ünitesi detayları: Arduino ile motor sürücü bağlantısı nasıl yapılır?\n- Arduino tabanlı donanım mimarisi: Arduino ile motor sürücü bağlantısı nasıl yapılır?\n- Motor & Motor Sürücü: Arduino ile motor sürücü bağlantısı nasıl yapılır?\n- Arduino Mimarisi: Arduino ile motor sürücü bağlantısı nasıl yapılır?\n- CAN Bus Protokolü: can bus nedir"
+  },
+  "7141518092": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Aks diyince aklına ne geliyor"
+      },
+      {
+        "role": "assistant",
+        "content": "Bu soru mühendislik kapsamı dışındadır. Sadece elektrikli araçlar, gömülü sistemler, CAN Bus, BMS ve motor sürücüleri üzerine teknik sorularınızı yanıtlayabilirim."
+      },
+      {
+        "role": "user",
+        "content": "Ney bu ney"
+      },
+      {
+        "role": "assistant",
+        "content": "Bu bir mühendislik projesi için hazırlanan malzeme listesi ve maliyet dökümüdür. Proje kapsamında kablo düzenleme ve izolasyon işlemleri için gerekli olan bileşenlerin detayları aşağıdadır:\n\n* **Kablo Bağı**\n    * Miktar: 5 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 66.5 TL\n    * Link: [https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV0000VG20W](https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV0000VG20W)\n\n* **Cırt Cırt Kablo Düzenleyici**\n    * Miktar: 1 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 611.8 TL\n    * Link: [https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0](https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0)\n\n* **Yapışkanlı Kablo Kanalı**\n    * Miktar: 2 ADET\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 199.9 TL\n    * Link: [https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ](https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ)\n\n* **Kuyumcu Etiketi**\n    * Miktar: 2 ADET\n    * Sebep: Mükerrer\n    * Fiyat: HEPSİBURADA: 100 TL\n    * Link: [https://www.hepsiburada.com/barcodex-72x-10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ](https://www.hepsiburada.com/barcodex-72x-10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ)\n\n* **Makaron**\n    * Miktar: 1 ADET\n    * Sebep: Kablo ek yerlerini izole etmek için kullanılacaktır.\n    * Fiyat: HEPSİBURADA: 399.9 TL\n    * Link: [https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup](https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup)"
+      },
+      {
+        "role": "user",
+        "content": "Bu nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "Bu, projeniz için gerekli olan malzeme listesinin (BOM - Bill of Materials) güncel dökümüdür:\n\n*   **Kablo Bağı**: 5 ADET | [Link](https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV00000VG20W) | HEPSİBURADA: 66.5 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Cırt Cırt Kablo Düzenleyici**: 1 ADET | [Link](https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0) | HEPSİBURADA: 611.8 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Yapışkanlı Kablo Kanalı**: 2 ADET | [Link](https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ) | HEPSİBURADA: 199.9 TL | Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n*   **Kuyumcu Etiketi**: 2 ADET | [Link](https://www.hepsiburada.com/barcodex-72x10-mm-standart-kuyumcu-etiketi-yuksek-yapiskanlik-ozellikli-rulo-etiket-pm-HB00000RZUEZ) | HEPSİBURADA: 100 TL | Mükerrer\n*   **Makaron**: 1 ADET | [Link](https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup) | HEPSİBURADA: 399.9 TL | Kablo ek yerlerini izole etmek için kullanılacaktır."
+      },
+      {
+        "role": "user",
+        "content": "Ne alaka ??"
+      },
+      {
+        "role": "assistant",
+        "content": "OpenRouter Hatası (429): Provider returned error"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "6856525168": {
+    "history": [
+      {
+        "role": "user",
+        "content": "mcp nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "MCP (Microchip Controller Peripheral) bağlamında, genellikle **MCP2515** CAN Bus denetleyicisi kastedilmektedir. Bu bileşen, SPI arayüzü üzerinden mikrodenetleyiciler ile CAN hattı arasında köprü görevi gören bir CAN kontrolcüsüdür.\n\n**Teknik Özellikler ve Kullanım Alanları:**\n*   **Protokol:** CAN 2.0B (Standard ve Extended frame desteği).\n*   **Arayüz:** SPI (Serial Peripheral Interface) üzerinden haberleşme.\n*   **Fonksiyon:** Veri paketlerini (frame) CAN protokol standartlarına uygun şekilde paketler ve fiziksel katman (transceiver) için hazır hale getirir.\n*   **Uygulama:** Gömülü sistemlerde, araç içi haberleşma ağlarında (In-Vehicle Networking) düğüm noktası oluşturmak için kullanılır.\n\n**Proje Envanter Verileri:**\n*   **MCP2515 Haberleşme Modülü:** 10 adet, 100.97 TL (Robotistan), araç içi haberleşme için.\n*   **DIP18 MCP2515:** 6 adet, 99.76 TL (Direnc.net), AKS kartı kullanımı için.\n*   **MCP2551 High-Speed CAN Transceiver:** 10 adet (3'ü alındı, 7'si alınacak), 78.5751 TL (Özdisan), sürücü katmanı için."
+      },
+      {
+        "role": "user",
+        "content": "lehim nasıl yapılır"
+      },
+      {
+        "role": "assistant",
+        "content": "Elektronik devre kartları (PCB) ve gömülü sistem bileşenleri (MCP2515, MCP2551 vb.) üzerinde güvenilir bir bağlantı sağlamak için profesyonel lehimleme süreci şu adımlardan oluşur:\n\n**Teknik Uygulama Adımları:**\n*   **Hazırlık:** Lehim yapılacak yüzeyin ve bileşen bacaklarının (pad/pin) oksitlenmeden temizlenmesi gerekir.\n*   **Isıtma:** Havya ucu, lehim telinin erime sıcaklığına (genellikle 350°C - 370°C) getirilmelidir. Isı, hem lehim yapılacak bileşen bacağına hem de PCB padine aynı anda uygulanmalıdır.\n*   **Lehimleme:** Isıtılan noktaya lehim teli değdirilerek sıvılaşması sağlanır. Lehim, yüzey gerilimi sayesinde kendiliğinden yayılmalıdır.\n*   **Soğuma:** Lehim donana kadar hareket ettirilmemelidir; aksi takdirde \"soğuk lehim\" (cold joint) oluşur ve yüksek direnç/iletim kaybına yol açar.\n*   **Temizlik:** İşlem sonrası flux (lehim pastası) kalıntıları izopropil alkol ile temizlenmelidir.\n\n**Proje Envanterindeki Lehimleme Ekipmanları:**\n*   **Lehim Teli:** 1 adet, 771.84 TL (ROBOCOMBO.COM) - 60% Kalay, 40% Kurşun.\n*   **Sıvı Lehim (Flux Paste):** 3 adet, 419 TL (HEPSİBURADA) - 35 gr, 183°C.\n*   **Vakumlu Tutucu (Desoldering Pump):** 1 adet, 586.67 TL (DİRENÇNET) - Çip ve hata düzeltme işlemleri için.\n*   **Havya Standı:** 2 adet, 558.96 TL (HEPSİBURADA) - Güvenli çalışma alanı için.\n*   **Lehimli Makaron:** 1 adet, 600 TL (HEPSİBURADA) - Kablo izolasyonu için."
+      },
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Lütfen teknik sorunuzu iletiniz. Sadece elektrikli araçlar, gömülü sistemler, CAN Bus, BMS, motor sürücüler, donanım ve yazılım konularında teknik destek sağlayabilirim."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_555": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_29": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_727": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, elektrikli araçlar (EV), CAN Bus, BMS ve motor sürücüleri konularında teknik destek sağlıyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_596": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyalleşme kullanan bir seri haberleşme protokolüdür.\n* **Fiziksel Katman:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı ile veri iletimi sağlar; bu sayede elektromanyetik gürültüye (EMI) karşı yüksek direnç gösterir.\n* **Veri Yapısı:** Mesajlar ID tabanlıdır; önceliklendirme (arbitration) mekanizması sayesinde düşük ID'li mesajlar hat üzerinde öncelik kazanır.\n* **Hata Yönetimi:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğü korunur.\n* **Kullanım Alanları:** Elektrikli araçlarda (EV) BMS, motor sürücüleri (MCU), batarya yönetim sistemleri ve araç içi sensör ağlarının haberleşmasında standarttır.\n\n**İlgili Donanım Bileşenleri (Envanter Verisi):**\n* **MCP2515:** CAN kontrolcüsü (SPI üzerinden haberleşir).\n* **MCP2551 / SN65HVD1050:** CAN Transceiver (fiziksel katman sinyal dönüşümü)."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_134": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_565": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve diğer dijital cihazlar arasında haberleşmeyi sağlayan, yüksek gürültülü ortamlarda (EV motor sürücüleri, BMS vb.) çalışmak üzere tasarlanmış, çoklu ana hat (multi-master) tabanlı bir seri haberleşme protokolüdür.\n* **Differential Signaling:** CAN_H ve CAN_L hatları üzerinden diferansiyel sinyalizasyon kullanarak elektromanyetik parazitlere (EMI) karşı yüksek direnç gösterir.\n* **Arbitration (Önceliklendirme):** Mesaj ID'leri üzerinden tabanlı bir önceliklendirme mekanizması kullanır; düşük ID'li mesajlar hattı daha yüksek öncelikle ele geçirir.\n* **Error Detection:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğünü denetler.\n* **Donanım Gereksinimleri:**\n    * **CAN Controller:** Veri paketlerini protokol kurallarına göre paketler (Örn: MCP2515).\n    * **CAN Transceiver:** Dijital sinyalleri diferansiyel voltaj seviyelerine dönüştürür (Örn: MCP2551, SN65HVD1050DR).\n* **Sistem Entegrasyonu (Mevcut Stok/İhtiyaç):**\n    * Araç içi haberleşme için **MCP2515 Haberleşme Modülü** (10 adet) kullanılacaktır.\n    * Sürücü katmanı için **IC-2551 Highspeed CAN Transceiver** (7 adet daha alınacak) ve BMS Master kartı için **SN65HVD1050DR** (3 adet) kullanılacaktır."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_917": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_37": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_232": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_496": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_676": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyalleşme kullanan bir seri haberleşme protokolüdür.\n* **Fiziksel Katman:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı ile veri iletimi sağlar; bu sayede elektromanyetik gürültüye (EMI) karşı yüksek direnç gösterir.\n* **Mesaj Yapısı:** Veriler \"Identifier\" (ID) ile tanımlanır; bu ID, mesajın önceliğini (arbitration) belirler.\n* **Hata Yönetimi:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğü korunur.\n* **Kullanım Alanları:** Elektrikli araçlarda (EV) BMS, motor sürücüleri (MCU), batarya yönetim sistemleri ve araç içi sensör ağlarının haberleşmasında standarttır.\n* **Donanım Gereksinimi:** CAN kontrolcüsü (örn. MCP2515) ve fiziksel katman için bir transceiver (örn. MCP2551 veya SN65HVD1050) gereklidir.\n\n**Envanter ve Tedarik Durumu:**\n* **MCP2515 Haberleşme Modülü:** 10 adet (Araç içi haberleşme için).\n* **IC-2551 CAN Transceiver:** 10 adet (3 adet alındı, 7 adet daha alınacak).\n* **SN65HVD1050DR CAN Interface IC:** 3 adet (BMS master kart için).\n* **SD Kartlar:** 128GB (1 adet) ve 32GB (1 adet) veri kaydı için."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_6": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_182": {
+    "history": [
+      {
+        "role": "user",
+        "content": "selam"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_714": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_493": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* **Tanım:** CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyal tabanlı bir seri haberleşme protokolüdür.\n* **Çalışma Prensibi:** İki ana hat (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı kullanarak veri iletimi sağlar; bu sayede elektromanyetik gürültüden (EMI) minimum düzeyde etkilenir.\n* **Kritik Özellikler:**\n    * **Hata Yönetimi:** Mesaj çakışmalarını önlemek için \"Arbitration\" (Önceliklendirme) mekanizması kullanır.\n    * **Robustness:** Otomotiv ve endüstriyel uygulamalar için yüksek gürültü bağışıklığına sahiptir.\n    * **Topoloji:** Genellikle Bus (Yol) topolojisi ile çalışır ve hattın sonlandığı noktalarda 120 $\\Omega$ direnç gerektirir.\n* **Donanım Bileşenleri:**\n    * **CAN Controller:** Veri paketlerini (frame) oluşturur ve protokol kurallarını yönetir (Örn: MCP2515).\n    * **CAN Transceiver:** Dijital veriyi fiziksel katman sinyallerine dönüştürür (Örn: MCP2551, SN65HVD1050DR).\n* **İlgili Stok/Satın Alma Verisi:**\n    * MCP2515 Haberleşme Modülü (10 ADET) - Robotistan: 100.97 TL\n    * IC-2551 Highspeed CAN Transceiver (10 ADET) - Özdisan: 78.5751 TL\n    * SN65HVD1050DR CAN Interface IC (3 ADET) - Ulutaş Elektronik: 20.27 TL"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_178": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* **Tanım:** CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyal tabanlı bir seri haberleşme protokolüdür.\n* **Çalışma Prensibi:** İki ana hat (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı kullanarak veri iletimi sağlar; bu sayede elektromanyetik gürültüye (EMI) karşı yüksek direnç gösterir.\n* **Kritik Özellikler:**\n    * **Hata Yönetimi:** Hata algılama, hata izolasyonu ve hata kurtarma mekanizmaları mevcuttur.\n    * **Önceliklendirme:** Mesaj ID'leri üzerinden arbitrasyon (çatışma yönetimi) yaparak düşük ID'li mesajlara öncelik tanır.\n    * **Topoloji:** Genellikle Bus (veriyolu) topolojisiyle kullanılır.\n* **Donanım Gereksinimleri (Sistem Envanterine Göre):**\n    * **Kontrolcü:** MCP2515 (SPI üzerinden haberleşen CAN kontrolcü modülü).\n    * **Transceiver (Alıcı-Verici):** MCP2551 veya SN65HVD1050DR (Dijital sinyali diferansiyel sinyale dönüştüren entegreler).\n* **Kullanım Alanları:** Elektrikli araçlarda BMS (Batarya Yönetim Sistemi), motor sürücüleri, ECU (Elektronik Kontrol Ünitesi) ve sensör ağları arasındaki veri trafiği."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_878": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* **Tanım:** Controller Area Network (CAN), araç içi ve endüstriyel sistemlerde mikrodenetleyiciler ve cihazlar arasında yüksek güvenilirlikli, düşük maliyetli ve gürültüye dayanıklı haberleşme sağlayan bir seri haberleşme protokolüdür.\n* **Çalışma Prensibi:** Diferansiyel sinyalleşme (CAN High ve CAN Low hatları) kullanarak elektromanyetik gürültüyü (EMI) minimize eder.\n* **Mimari:** Multi-master yapısındadır; yani ağdaki herhangi bir düğüm (node) veri gönderebilir. Çakışmaları önlemek için \"Arbitration\" (öncelik belirleme) mekanizmasını kullanır.\n* **Kritik Bileşenler:**\n    * **CAN Controller:** Veri paketlerini (frame) oluşturur, hata kontrolünü yapar ve protokol kurallarını yönetir (Örn: MCP2515).\n    * **CAN Transceiver:** Controller'dan gelen dijital sinyalleri fiziksel katman olan diferansiyel voltaj seviyelerine dönüştürür (Örn: MCP2551, SN65HVD1050).\n* **Proje Envanterindeki İlgili Bileşenler:**\n    * **MCP2515 Haberleşme Modülü:** SPI üzerinden haberleşen CAN kontrolcü modülü (10 adet).\n    * **IC-2551 Highspeed CAN Transceiver:** Fiziksel katman sürücüsü (10 adet).\n    * **SN65HVD1050DR:** BMS Master kartı için özel CAN arayüz entegresi (3 adet)."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_812": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyalleşme kullanan bir seri haberleşme protokolüdür.\n* **Fiziksel Katman:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel sinyal iletimi yapılır; bu yapı elektromanyetik gürültüye (EMI) karşı yüksek direnç sağlar.\n* **Veri Yapısı:** Mesajlar ID tabanlıdır; önceliklendirme, mesaj çakışması durumunda düşük ID'li mesajın hattı ele geçirmesi (arbitration) ile sağlanır.\n* **Hata Yönetimi:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğü korunur.\n* **Kullanım Alanları:** Elektrikli araçlarda BMS (Battery Management System), motor sürücüleri (MCU), şarj kontrol üniteleri ve araç içi sensör ağları.\n\n**İlgili Donanım Bileşenleri (Stok/Satın Alma Listesi):**\n* **MCP2515 Haberleşme Modülü:** SPI üzerinden CAN kontrolcüsü sağlar (10 adet, Robotistan: 100.97 TL).\n* **MCP2551 CAN Transceiver:** Fiziksel katman sinyal dönüşümü sağlar (10 adet, Özdisan: 78.5751 TL).\n* **SN65HVD1050DR CAN Interface IC:** BMS Master kartı için özel transceiver (3 adet, Ulutaş Elektronik: 20.27 TL)."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_826": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyalleşme kullanan bir seri haberleşme protokolüdür.\n* **Fiziksel Katman:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı ile veri iletimi yapılır, bu da elektromanyetik gürültüye (EMI) karşı yüksek direnç sağlar.\n* **Mesaj Yapısı:** Veriler \"Identifier\" (ID) ile tanımlanır; bu ID, mesajın önceliğini belirler. Mesajlar adresleme yerine içerik tabanlıdır (Content-based addressing).\n* **Hata Yönetimi:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğü korunur.\n* **Kullanım Alanları:** Elektrikli araçlarda BMS (Battery Management System), motor sürücüleri (Inverter), şarj kontrol üniteleri ve araç içi sensör ağları.\n\n**İlgili Donanım Bileşenleri (Envanter Verisi):**\n* **MCP2515:** CAN kontrolcüsü (SPI üzerinden haberleşir).\n* **MCP2551 / SN65HVD1050:** CAN Transceiver (Fiziksel katman sinyal dönüşümü)."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_103": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* **Tanım:** CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyal tabanlı bir seri haberleşme protokolüdür.\n* **Çalışma Prensibi:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı kullanarak gürültüye karşı yüksek direnç gösterir.\n* **Kritik Özellikler:**\n    * **Hata Yönetimi:** Mesaj çakışmalarını önlemek için \"Arbitration\" (Hakemlik) mekanizması kullanır.\n    * **Önceliklendirme:** Mesaj ID'sine dayalı olarak düşük ID'li mesajlar yüksek önceliklidir.\n    * **Robustness:** Elektromanyetik parazitlerin (EMI) yoğun olduğu otomotiv ve endüstriyel ortamlarda kararlı çalışır.\n* **Donanım Gereksinimleri (Mevcut Envanter Verileriyle):**\n    * **Kontrolcü:** MCP2515 (SPI üzerinden haberleşen CAN kontrolcü modülü).\n    * **Transceiver (Alıcı-Verici):** MCP2551 veya SN65HVD1050DR (Fiziksel katman sinyal dönüşümü için).\n    * **Sonlandırma Direnci:** Hattın sonuna 120 $\\Omega$ direnç eklenmelidir."
+      },
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında teknik destek sağlıyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: Can bus nedir"
+  },
+  "web_user_738": {
+    "history": [
+      {
+        "role": "user",
+        "content": "bms nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "BMS (Battery Management System), batarya paketinin güvenliğini, ömrünü ve performansını optimize etmek için kullanılan elektronik kontrol ünitesidir.\n\n*   **Hücre Voltaj İzleme:** Her bir hücrenin voltaj seviyesini sürekli takip eder.\n*   **Dengeleme (Balancing):** Hücreler arasındaki voltaj farklarını minimize etmek için pasif veya aktif dengeleme yapar.\n*   **Sıcaklık Kontrolü:** Batarya hücrelerinin ve güç bileşenlerinin termal limitlerini izler.\n*   **Akım ve Gerilim Koruması:** Aşırı akım (over-current), aşırı voltaj (over-voltage) ve düşük voltaj (under-voltage) durumlarında devreyi keser.\n*   **Veri İletişimi:** Batarya durum bilgilerini (SoC, SoH) CAN Bus veya UART üzerinden kontrol ünitesine iletir.\n\n**BMS Master Kart Tasarımı İçin Kritik Bileşenler (Mevcut Liste):**\n*   **Akım Ölçümü:** INA229AIDGSR (Yüksek hassasiyetli akım/gerilim izleme).\n*   **Filtreleme ve Stabilizasyon:** MLCC 0805 100nF ve 1uF kapasitörler.\n*   **Gerilim Bölücü ve Sinyal İşleme:** 10 Ohm ve 10K Ohm SMT dirençler."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- BMS (Batarya Yönetim Sistemi) yapılandırması: bms nedir"
+  },
+  "web_user_438": {
+    "history": [
+      {
+        "role": "user",
+        "content": "bms nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "BMS (Battery Management System), batarya paketinin güvenliğini, ömrünü ve performansını optimize etmek için kullanılan elektronik kontrol ünitesidir.\n\n*   **Hücre Voltaj İzleme:** Her bir hücrenin voltaj seviyesini sürekli takip ederek aşırı şarj veya aşırı deşarj durumlarını engeller.\n*   **Akım ve Sıcaklık Kontrolü:** Sistemden geçen akımı ve batarya hücrelerinin sıcaklığını izleyerek termal kaçak (thermal runaway) riskini minimize eder.\n*   **Dengeleme (Cell Balancing):** Hücreler arasındaki voltaj farklarını eşitlemek için pasif (direnç üzerinden ısıtarak) veya aktif (enerjiyi diğer hücreye aktararak) yöntemleri kullanır.\n*   **Hata Koruması:** Kısa devre, aşırı akım ve düşük voltaj durumlarında kontaktörleri veya MOSFET'leri tetikleyerek sistemi izole eder.\n*   **Veri İletişimi:** Batarya durum bilgilerini (SoC - State of Charge, SoH - State of Health) CAN Bus veya UART protokolleri üzerinden kontrol ünitesine (VCU/MCU) iletir.\n\n**BMS Master Kart Tasarımı İçin Kritik Bileşenler (Mevcut Stok/Talep Listesi):**\n*   **Akım Ölçümü:** INA229AIDGSR (Yüksek hassasiyetli akım ve voltaj izleme).\n*   **Filtreleme ve Dekuplaj:** MLCC 0805 100nF 100VDC ve 1uF (Gürültü engelleme ve stabilizasyon).\n*   **Gerilim Bölücü ve Akım Yolu:** 10 Ohm ve 10K Ohm SMT dirençler."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- BMS (Batarya Yönetim Sistemi) yapılandırması: bms nedir"
+  },
+  "web_user_172": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_78": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_541": {
+    "history": [
+      {
+        "role": "user",
+        "content": "mcp bedir"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_962": {
+    "history": [
+      {
+        "role": "user",
+        "content": "uno ile proje fikri"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV (Elektrikli Araç), CAN Bus, BMS (Batarya Yönetim Sistemi) ve motor sürücüleri konularında yardımcı olabilirim."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_532": {
+    "history": [
+      {
+        "role": "user",
+        "content": "ne alaka"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_191": {
+    "history": [
+      {
+        "role": "user",
+        "content": "mmerhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_594": {
+    "history": [
+      {
+        "role": "user",
+        "content": "selam"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_595": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_961": {
+    "history": [
+      {
+        "role": "user",
+        "content": "lora kaç voltla çalışıyo"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Provider returned error"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- LoRa kablosuz haberleşme modülleri: lora kaç voltla çalışıyo"
+  },
+  "web_user_168": {
+    "history": [
+      {
+        "role": "user",
+        "content": "mcp ne"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Provider returned error"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_456": {
+    "history": [
+      {
+        "role": "user",
+        "content": "selam"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      },
+      {
+        "role": "user",
+        "content": "mcp nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "MCP (Microchip CAN Protocol) bağlamında iki temel bileşen öne çıkmaktadır:\n\n* **MCP2515 (CAN Controller):** SPI arayüzü üzerinden haberleşen, CAN protokolünü yöneten bağımsız bir kontrolcüdür. Veri paketlerini (frame) oluşturur, hata kontrolü yapar ve SPI üzerinden mikrodenetleyiciye iletir.\n* **MCP2551 (CAN Transceiver):** Dijital verileri fiziksel CAN hattı (differential signal) seviyesine dönüştüren sürücüdür.\n\n**Envanter ve Tedarik Durumu:**\n\n* **MCP2515 Haberleşme Modülü:** 10 adet mevcut. Araç içi haberleşme için kullanılacaktır. (Fiyat: 100.97 TL - ROBOTİSTAN)\n* **MCP2551 Highspeed CAN Transceiver:** 10 adet toplam ihtiyaç. 3 adedi alındı, 7 adedi alınacak. (Fiyat: 78.5751 TL - ÖZDİSAN)\n* **DIP18 MCP2515:** 6 adet mevcut. AKS kartı için kullanılacaktır. (Fiyat: 99.76 TL - DİRENÇNET)"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_16": [
+    {
+      "user": "merhaba",
+      "bot": "Merhaba! Size nasıl yardımcı olabilirim?"
+    },
+    {
+      "user": "naber",
+      "bot": "Mesajınızı aldım: 'naber'. Yardımcı olabileceğim başka bir konu var mı?"
+    },
+    {
+      "user": "ne demek o",
+      "bot": "Mesajınızı aldım: 'ne demek o'. Yardımcı olabileceğim başka bir konu var mı?"
+    }
+  ],
+  "web_user_998": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      },
+      {
+        "role": "user",
+        "content": "multimetre nasıl kullanılır"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı oluyorum."
+      },
+      {
+        "role": "user",
+        "content": "zaten alakalı konuyla"
+      },
+      {
+        "role": "assistant",
+        "content": "Multimetre kullanımı, elektrikli araç ve gömülü sistemler bağlamında şu teknik prosedürlere dayanmalıdır:\n\n*   **Gerilim Ölçümü (Voltage):**\n    *   Devre enerjisi açıkken (live circuit) yapılır.\n    *   Problar devreye paralel bağlanır.\n    *   DC modunda BMS hücre voltajları veya kontrol ünitesi beslemesi; AC modunda ise şebeke girişleri ölçülür.\n*   **Akım Ölçümü (Current):**\n    *   Devre enerjisi kapatılmalıdır.\n    *   Problar devreye seri olarak bağlanır.\n    *   Yüksek akımlı EV sistemlerinde multimetre yerine Hall Effect sensörleri veya akım trafoları (clamp meter) tercih edilmelidir; multimetre üzerinden yüksek akım geçirmek cihazın sigortasını attırır veya devreye zarar verir.\n*   **Direnç ve Süreklilik (Resistance/Continuity):**\n    *   Devre enerjisi mutlaka kapatılmalıdır.\n    *   Kısa devre kontrolü için süreklilik modu kullanılır.\n    *   Komponent değerleri (direnç, diyot, transistör) için direnç modu kullanılır.\n*   **Güvenlik Protokolü:**\n    *   Yüksek gerilim (HV) ölçümlerinde CAT III veya CAT IV sınıfı multimetre kullanılmalıdır.\n    *   Probların izolasyon durumu kontrol edilmelidir."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_825": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "* CAN (Controller Area Network), mikrodenetleyiciler ve mikroişlemciler arasında yüksek güvenilirlilik sağlayan, çoklu master/multi-master yapısına sahip, diferansiyel sinyalleşme kullanan bir seri haberleşme protokolüdür.\n* **Fiziksel Katman:** İki kablo (CAN High ve CAN Low) üzerinden diferansiyel voltaj farkı ile veri iletimi sağlar; bu sayede elektromanyetik gürültüye (EMI) karşı yüksek direnç gösterir.\n* **Veri Yapısı:** Mesajlar ID tabanlıdır; önceliklendirme (arbitration) mekanizması sayesinde düşük ID'li mesajlar hattı ele geçirerek öncelik kazanır.\n* **Hata Yönetimi:** CRC (Cyclic Redundancy Check), bit stuffing ve frame check gibi mekanizmalarla veri bütünlüğü denetlenir.\n* **Kullanım Alanları:** Elektrikli araçlarda BMS (Battery Management System), motor sürücüleri (MCU), şarj kontrol üniteleri ve araç içi sensör ağlarının haberleşmasında standarttır.\n* **İlgili Donanım Bileşenleri:**\n    * **CAN Controller:** Veri paketlerini protokol kurallarına göre hazırlar (Örn: MCP2515).\n    * **CAN Transceiver:** Dijital sinyalleri diferansiyel fiziksel sinyallere dönüştürür (Örn: MCP2551, SN65HVD1050DR).\n\n**Envanter ve Tedarik Durumu:**\n* **MCP2515 Haberleşme Modülü:** 10 adet (Araç içi haberleşme için).\n* **IC-2551 Transceiver:** 10 adet (3 adet alındı, 7 adet alınacak).\n* **SN65HVD1050DR:** 3 adet (BMS master kart için).\n* **SD Kartlar:** 128GB (1 adet) ve 32GB (1 adet) (Veri kaydı için)."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_433": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_138": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      },
+      {
+        "role": "user",
+        "content": "lehim nasıl yapılır"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_670": {
+    "history": [
+      {
+        "role": "user",
+        "content": "haberleşme protokolleri nelerdir"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_951": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      },
+      {
+        "role": "user",
+        "content": "can bus ne dememk"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      },
+      {
+        "role": "user",
+        "content": "can bus nne demek"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus ne dememk"
+  },
+  "web_user_402": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis."
+  },
+  "web_user_597": {
+    "history": [
+      {
+        "role": "user",
+        "content": "nneden"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      },
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      },
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_859": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (429): Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_766": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri konularında yardımcı olabilirim."
+      },
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "- CAN (Controller Area Network) bir seri haberleşme protokolüdür.  \n- Çoklu mikrodenetleyici ve cihazların düşük maliyetli, yüksek güvenilirlikli veri alışverişi yapmasını sağlar.  \n- Veri çerçevesi (frame) yapısı:  \n  - **Identifier (ID)**: 11 bit (standard) veya 29 bit (extended) mesaj kimliği.  \n  - **Control field**: RTR (Remote Transmission Request) ve IDE (Identifier Extension) bayrakları.  \n  - **Data field**: 0‑8 byte veri.  \n  - **CRC**: 15 bit hata kontrolü.  \n  - **ACK**: Alıcı onay bayrağı.  \n  - **End of Frame**: 7 bit boşluk.  \n- **Bağlantı topolojisi**:  \n  - **Bus (kablo)**: iki uçta terminatör (120 Ω) ile 1‑2 m uzunluğunda.  \n  - **Multi‑drop**: birden çok cihaz aynı kablo üzerinde.  \n- **İletim hızı**: 10 kbps – 1 Mbps (standart) ve 5 Mbps (high‑speed).  \n- **Hata yönetimi**:  \n  - CRC, bit‑error detection, bit‑error recovery.  \n  - Arbitration: düşük ID’ye sahip mesaj önceliklidir, çakışma durumunda otomatik çözüm.  \n- **Uygulama alanları**:  \n  - Otomotiv (motor kontrol, ABS, ECU, BMS, infotainment).  \n  - Endüstriyel otomasyon, ev otomasyonu, tıbbi cihazlar.  \n- **Standartlar**:  \n  - ISO 11898‑1 (high‑speed, 1 Mbps).  \n  - ISO 11898‑2 (low‑speed, 125 kbps).  \n  - ISO 11898‑3 (CAN FD, 5 Mbps veri hızı).  \n- **Kullanım senaryosu**:  \n  - BMS master kartı: SN65HVD1050 gibi transceiver ile CAN bus üzerinden batarya hücre durumlarını okur.  \n  - Araç içi haberleşme: MCP2515 modülü SPI üzerinden mikrodenetleyiciye bağlanır, CAN bus üzerinden mesaj gönderir/aldırır."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_292": {
+    "history": [
+      {
+        "role": "user",
+        "content": "merhaba"
+      },
+      {
+        "role": "assistant",
+        "content": "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücülerle ilgili teknik konularda yardımcı olabilirim."
+      },
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "[{\"urun_adi\":\"128GB SD Kart\",\"birim\":\"ADET\",\"miktar\":\"1\",\"link\":\"https://www.hepsiburada.com/kingston-sdcs2-128gb-128gb-micsdxc-canvas-select-plus-100r-a1-c10-card-adp-hafiza-karti-pm-HB00000P7DD7\",\"sebep\":\"Veri kaydı için kullanılacaktır.\",\"fiyat_listesi\":\"HEPSİBURADA: 1150 TL\"},{\"urun_adi\":\"32GB SD Kart\",\"birim\":\"ADET\",\"miktar\":\"1\",\"link\":\"https://www.hepsiburada.com/kingston-32gb-microsdhc-canvas-select-plus-100r-a1-c10-card-adapter-32gb-sdcs2-pm-HB00000P7DCX\",\"sebep\":\"Veri kaydı için kullanılacaktır.\",\"fiyat_listesi\":\"HEPSİBURADA: 949 TL\"},{\"urun_adi\":\"MCP2515 Haberleşme Modülü\",\"birim\":\"ADET\",\"miktar\":\"10\",\"link\":\"https://www.robotistan.com/mcp2515-canbus-spi-haberlesme-modulu\",\"sebep\":\"Araç içi haberleşme için kullanılacaktır.\",\"fiyat_listesi\":\"ROBOTİSTAN: 100.97 TL\"},{\"urun_adi\":\"IC-2551 HIGHSPEED CAN TRANSCEIVER 8SOIC MICROCHIP\",\"birim\":\"ADET\",\"miktar\":\"10\",\"link\":\"https://www.ozdisan.com/p/driver-receiver-ve-transceiver-entegreleri-229/microchip-mcp2551-i-sn-335441\",\"sebep\":\"Sürücü için kullanılacaktır.\",\"fiyat_listesi\":\"HEPSİBURADA: 3 tane alındı 7 tane alınacak TL, ÖZDİSAN: 78.5751 TL\"},{\"urun_adi\":\"SN65HVD1050DR - (VP1050) SOIC-8 CAN INTERFACE IC\",\"birim\":\"ADET\",\"miktar\":\"3\",\"link\":\"https://www.ulutaselektronik.com/urun/sn65hvd1050dr-vp1050-soic-8-can-interface-ic?srsltid=AfmBOooiWuOzbNybWfI1RdyCFyvZK7hUTCvtyo0y775cO4WEccp2SWlr\",\"sebep\":\"BMS master kart için kullanılacaktır.\",\"fiyat_listesi\":\"ULUTAŞELEKTRONİK: 20.27 TL\"}]"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_684": {
+    "history": [
+      {
+        "role": "user",
+        "content": "can bus nedir"
+      },
+      {
+        "role": "assistant",
+        "content": "- **Kısaca tanım**: CAN (Controller Area Network) bir seri haberleşme protokolüdür; gömülü sistemler arasında düşük maliyetli, yüksek güvenilirlikli veri alışverişi sağlar.  \n- **İşleyiş prensibi**:  \n  - **Bus topolojisi**: iki tel (CAN_H, CAN_L) üzerinden “daisy‑chain” bağlantı.  \n  - **Çoklu cihaz**: her cihaz (node) aynı bus’a bağlanır; veri çerçeveleri (frames) ile iletişim kurar.  \n- **Çerçeve formatı**:  \n  - **Standard frame** (11 bit ID)  \n  - **Extended frame** (29 bit ID)  \n  - **Data field**: 0‑8 byte veri, **CRC**, **ACK**, **EOF** gibi kontrol alanları.  \n- **İletişim modları**:  \n  - **Broadcast**: tüm node’lara aynı anda veri gönderilir.  \n  - **Multicast**: belirli ID’lere sahip node’lar veri alır.  \n  - **Unicast**: tek bir node’a özel mesaj.  \n- **Arıza tespiti**:  \n  - **Error frames**: hatalı bitler, CRC hatası, bit stuffing hatası vb.  \n  - **Error counters**: Transmit Error Counter (TEC), Receive Error Counter (REC).  \n  - **Error states**: **Error Active**, **Error Passive**, **Bus Off**.  \n- **Kullanım alanları**:  \n  - Otomotiv (motor kontrolü, ABS, ECU, BMS, infotainment)  \n  - Endüstriyel otomasyon  \n  - Medikal cihazlar  \n  - Ev otomasyonu  \n- **Performans**:  \n  - **Bit hızı**: 10 kbps – 1 Mbps (standart)  \n  - **Mesafe**: 1 km (1 Mbps) – 40 km (10 kbps)  \n  - **Güvenilirlik**: 1 ppm clock toleransı, bit stuffing, CRC, ACK mekanizması.  \n- **Uygulama örneği**:  \n  ```c\n  // MCP2515 ile CAN mesajı gönderme (SPI üzerinden)\n  CAN_message_t msg;\n  msg.id = 0x123;\n  msg.len = 2;\n  msg.data[0] = 0xAB;\n  msg.data[1] = 0xCD;\n  MCP2515_sendMessage(&msg);\n  ```"
+      },
+      {
+        "role": "user",
+        "content": "raporda  Lehim Pompası var mı"
+      },
+      {
+        "role": "assistant",
+        "content": "- **Kontrol adımları**  \n  - **Dosya açma**: PDF/Word/Excel dosyasını açın.  \n  - **Anahtar kelime arama**:  \n    - `Ctrl+F` → “Lehim Pompası”, “solder pump”, “soldering pump”.  \n  - **Paragraf inceleme**:  \n    - Bulunan eşleşmelerin bağlamını okuyun (malzeme listesi, ekipman bölümü).  \n  - **Liste/Tablo kontrolü**:  \n    - Malzeme listesi, ekipman listesi veya teknik çizim tablolarını gözden geçirin.  \n  - **Yazım varyasyonları**:  \n    - “Lehim Pompası”, “Lehim Pompası”, “Solder Pump”, “Soldering Pump” gibi farklı varyasyonları da arayın.  \n  - **Sonuç**:  \n    - Eşleşme yoksa raporda Lehim Pompası bulunmuyor.  \n    - Eşleşme varsa, ilgili satır/bağlamı not alın."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler projesi üzerinde çalışan bir mühendis.\n- CAN Bus iletişim protokolü parametreleri: can bus nedir"
+  },
+  "web_user_bsbtfr8": {
+    "history": [
+      {
+        "role": "user",
+        "content": "Arduino ile motor sürücü bağlantısı nasıl yapılır?"
+      },
+      {
+        "role": "assistant",
+        "content": "API Hatası (404): This model is unavailable for free. The paid version is available now - use this slug instead: meta-llama/llama-3.3-70b-instruct"
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler geliştiricisi.\n- Motor & Motor Sürücü: Arduino ile motor sürücü bağlantısı nasıl yapılır?\n- Arduino Mimarisi: Arduino ile motor sürücü bağlantısı nasıl yapılır?"
+  },
+  "web_user_hwixphv": {
+    "history": [
+      {
+        "role": "user",
+        "content": "ESP 25"
+      },
+      {
+        "role": "assistant",
+        "content": "* Kablo Bağı, 3 ADET\n  * Fiyat listesi: HEPSİBURADA: 140 TL\n  * Link: https://www.hepsiburada.com/zenith-3-6-x-250-mm-kablo-bagi-plastik-cirt-kelepce-paket-100adet-p-HBCV00000FAIGZ\n  * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Cırt Cırt Kablo Düzenleyici, 1 ADET\n  * Fiyat listesi: HEPSİBURADA: 611.8 TL\n  * Link: https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0\n  * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Ducktape, 5 ADET\n  * Fiyat listesi: HEPSİBURADA: 195 TL\n  * Link: https://www.hepsiburada.com/vodaseal-duct-tape-tamir-bandi-50mm-x-25m-beyaz-pm-HB00000DQITJ\n  * Sebep: Mükerrer\n\n* İzopropil Alkol, 1 ADET\n  * Fiyat listesi: HEPSİBURADA: 784.34 TL\n  * Link: https://www.hepsiburada.com/luxor-kimya-izopropil-alkol-5-lt-99-9-saf-ipa-yuzey-temizleyici-p-HBCV00005Y25A1?magaza=LUXOREND\n  * Sebep: Mükerrer\n\n* Sparco Yarış Tulumu, 1 ADET\n  * Fiyat listesi: SPARCO: 33344.34 TL\n  * Link: https://www.sparco.com.tr/urun/sparco-new-sprint-fia-onayli-yaris-tulumu_12550.aspx?CatId=2024\n  * Sebep: Demirbaş"
+      },
+      {
+        "role": "user",
+        "content": "Telemetre ekranı nasıl yapabilirim"
+      },
+      {
+        "role": "assistant",
+        "content": "Telemetri ekranı tasarımı, verinin kaynağına (CAN Bus, UART, SPI) ve görüntüleme yöntemine (LCD, OLED, TFT) bağlı olarak üç ana katmandan oluşur:\n\n* **Veri Toplama Katmanı (Data Acquisition):**\n    * **Kaynak:** Araç üzerindeki CAN Bus hattı veya sensörler.\n    * **Donanım:** ESP32 (çift çekirdek yapısı sayesinde veri işleme ve ekran sürme işlemlerini ayırabilir) veya STM32.\n    * **Arayüz:** MCP2515 (CAN Controller) veya dahili CAN-FD birimi.\n    * **İşlem:** Gelen ham CAN frame'lerinin (ID ve Data) parse edilmesi (ayrıştırılması) ve fiziksel değerlere (Hız, RPM, Voltaj, Sıcaklık) dönüştürülmesi.\n\n* **Veri İşleme ve Grafik Katmanı (Processing):**\n    * **Algoritma:** Gelen verilerin ortalamasının alınması (filtreleme) ve görselleştirme için uygun formatlanması.\n    * **Kütüphaneler:** \n        * **LVGL (Light and Versatile Graphics Library):** Profesyonel, akıcı ve dokunmatik uyumlu arayüzler için endüstri standardıdır.\n        * **TFT_eSPI:** ESP32 ve TFT ekranlar için yüksek performanslı, düşük gecikmeli kütüphane.\n    * **Görselleştirme:** Gauge (kadran), bar grafikleri ve dijital göstergeler.\n\n* **Görüntüleme Katmanı (Display Hardware):**\n    * **Ekran Seçimi:**\n        * **OLED (SSD1306/SH1106):** Düşük güç tüketimi, yüksek kontrast (Siyah zemin üzerine beyaz/mavi), küçük boyut.\n        * **TFT LCD (ILI9341/ST7789):** Renkli, yüksek çözünürlük, dokunmatik panel desteği (GUI için ideal).\n    * **Bağlantı:** SPI (Hız için önerilir) veya paralel arayüz.\n\n**Önerilen Mimari Akış:**\n`Sensör/CAN Bus` $\\rightarrow$ `ESP32 (CAN Transceiver ile)` $\\rightarrow$ `SPI Protokolü` $\\rightarrow$ `TFT Ekran (LVGL Kütüphanesi ile)`"
+      },
+      {
+        "role": "user",
+        "content": "lehim içinn neler lazım"
+      },
+      {
+        "role": "assistant",
+        "content": "⚠️ Beklenmeyen bir hata oluştu (200). Tekrar dener misin?"
+      },
+      {
+        "role": "user",
+        "content": "lehim içinn neler lazım"
+      },
+      {
+        "role": "assistant",
+        "content": "Elektronik devre kartı (PCB) ve gömülü sistem montajı için gerekli ekipmanlar şunlardır:\n\n* **Lehimleme İstasyonu:**\n    * **Havya (Soldering Iron):** Sıcaklık ayarlı (adjustable temperature) olması, hassas komponentler (SMD) için kritik öneme sahiptir.\n    * **Sıcak Hava İstasyonu (Hot Air Station):** SMD komponentlerin (direnç, kondansatör, entegre) sökülmesi ve takılması için gereklidir.\n\n* **Lehim Malzemeleri:**\n    * **Lehim Teli (Solder Wire):** Elektronik devreler için genellikle %60/40 (Sn/Pb) veya kurşunsuz (Lead-free) flux içerikli ince teller kullanılır.\n    * **Flux (Lehim Pastası):** Lehimin yüzeye tutunmasını kolaylaştırmak ve oksidasyonu önlemek için gereklidir.\n    * **Lehim Emme Teli (Solder Wick/Desoldering Braid):** Hatalı lehimleri temizlemek için kullanılır.\n\n* **Yardımcı Ekipmanlar:**\n    * **Lehim Pompası (Desoldering Pump):** Delikli (Through-hole) komponentleri sökerken fazla lehimi çekmek için kullanılır.\n    * **Cımbız Seti (Tweezers):** Özellikle SMD komponentlerin tutulması için antistatik (ESD safe) cımbızlar.\n    * **Büyüteç veya Mikroskop:** Çok küçük (0402, 0603 paket) komponentlerin kontrolü için gereklidir.\n    * **PCB Tutucu (Helping Hand):** Devre kartını sabit tutmak için.\n    * **Temizlik Malzemesi:** Lehim sonrası kalan flux kalıntılarını temizlemek için **İzopropil Alkol (IPA)** ve antistatik bez."
+      },
+      {
+        "role": "user",
+        "content": "Peki lehim nasıl yapılır"
+      },
+      {
+        "role": "assistant",
+        "content": "Lehimleme işlemi, metal yüzeylerin eriyen bir alaşım (lehim teli) aracılığıyla elektriksel ve mekanik olarak birleştirilmesi sürecidir. Profesyonel bir mühendislik uygulaması için şu adımlar izlenmelidir:\n\n* **Hazırlık ve Temizlik:**\n    * **Yüzey Temizliği:** Lehimlenecek komponent bacağı ve PCB pad'i (bakır alan) oksitlenmiş veya kirli ise **İzopropil Alkol (IPA)** ile temizlenmelidir. Kirli yüzeylerde \"soğuk lehim\" (cold solder joint) oluşur.\n    * **Havya Ucu Temizliği:** Havya ucu, temizleme teli (brass wool) veya ıslak sünger ile sürekli temizlenmelidir. Uçta biriken yanmış flux kalıntıları ısı transferini engeller.\n\n* **Isıl İşlem (Isıtma):**\n    * **Çift Taraflı Isıtma:** Havya ucu sadece lehim teline değil, **hem komponent bacağına hem de PCB pad'ine** aynı anda temas ettirilmelidir. Isı, lehimin akışkan hale gelmesi için her iki yüzeye de iletilmelidir.\n    * **Isı Dengesi:** Komponentin aşırı ısınarak iç yapısının bozulmaması için havya ucu yüzeyde çok uzun süre tutulmamalıdır (genellikle 2-3 saniye yeterlidir).\n\n* **Lehimleme (Besleme):**\n    * **Lehim Teli Uygulaması:** Lehim teli, havya ucuna değil, **ısıtılmış olan komponent bacağına ve pad'e** değdirilmelidir. Isı, lehimin kendiliğinden akmasını sağlamalıdır.\n    * **Miktar Kontrolü:** Gereğinden fazla lehim kullanımı \"lehim köprüsü\" (short circuit) riskine yol açar; az miktar ise mekanik zayıflığa neden olur.\n\n* **Soğuma ve Kontrol:**\n    * **Sabit Tutma:** Lehim donana kadar (yaklaşık 1-2 saniye) komponent bacağı kesinlikle hareket ettirilmemelidir. Hareket, kristal yapının bozulmasına ve lehimin çatlamasına neden olur.\n    * **Görsel Kontrol:** Başarılı bir lehim; parlak, konik (komponent bacağını bir dağ gibi sarmış) ve yüzeye tam yayılmış olmalıdır. Mat, topaklanmış veya grileşmiş bir görünüm \"soğuk lehim\" belirtisidir ve yeniden lehimlenmelidir.\n\n**Kritik Mühendislik Notu:** Hassas mikrodenetleyiciler (MCU) ve sensörler üzerinde çalışırken, statik elektrikten korunmak için mutlaka **ESD (Electrostatic Discharge) bileklikleri** kullanılmalıdır."
+      },
+      {
+        "role": "user",
+        "content": "????"
+      },
+      {
+        "role": "assistant",
+        "content": "⚠️ Beklenmeyen bir hata oluştu (200). Tekrar dener misin?"
+      },
+      {
+        "role": "user",
+        "content": "answer me"
+      },
+      {
+        "role": "assistant",
+        "content": "* Kablo Bağı (3 ADET)\n    * Fiyat listesi: HEPSİBURADA: 140 TL\n    * Link: https://www.hepsiburada.com/zenith-3-6-x-250-mm-kablo-bagi-plastik-cirt-kelepce-paket-100adet-p-HBCV0000FAIGZ\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Kablo Bağı (5 ADET)\n    * Fiyat listesi: HEPSİBURADA: 66.5 TL\n    * Link: https://www.hepsiburada.com/cet-san-kablo-bagi-cirt-kelepce-siyah-2-5-x-150-mm-100-lu-p-HBV00000VG20W\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Cırt Cırt Kablo Düzenleyici (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 611.8 TL\n    * Link: https://www.hepsiburada.com/coofbe-5-renk-25-metre-cirt-cirt-bantli-kablo-sarici-duzenleyici-organizator-kablo-duzenleme-pm-HBC00008PYSJ0\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Yapışkanlı Kablo Kanalı (2 ADET)\n    * Fiyat listesi: HEPSİBURADA: 199.9 TL\n    * Link: https://www.hepsiburada.com/jetfast-60-adet-kablo-duzenleyici-sabitleyici-duvar-fayans-masa-kablo-tutucu-yapiskanli-kablo-kanali-klips-p-HBCV0000879MNZ\n    * Sebep: Kabloları düzenli tutmak ve temiz bir görüntü elde etmek için kullanılacaktır.\n\n* Makaron (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 399.9 TL\n    * Link: https://www.hepsiburada.com/hubstein-750-li-kutulu-heat-shrink-makaron-daralan-kablo-tamir-seti-p-HBCV000045CXJK?magaza=SnrGrup\n    * Sebep: Kablo ek yerlerini izole etmek için kullanılacaktır."
+      },
+      {
+        "role": "user",
+        "content": "what is mcp2515"
+      },
+      {
+        "role": "assistant",
+        "content": "MCP2515, Microchip Technology tarafından üretilen, SPI (Serial Peripheral Interface) protokolü üzerinden haberleşen bir **CAN (Controller Area Network) Denetleyicisidir (Controller)**.\n\nTeknik özellikleri ve kullanım alanları şunlardır:\n\n* **Temel Fonksiyon:** Mikrodenetleyicilerin (Arduino, STM32, ESP32 vb.) donanımsal olarak CAN protokolünü desteklemediği durumlarda, bu protokolü sisteme dahil etmek için kullanılır. Mikrodenetleyici SPI üzerinden MCP2515'e veri gönderir, MCP2515 ise bu veriyi CAN standartlarına uygun frame yapısına dönüştürerek CAN Bus hattına aktarır.\n* **Haberleşme Protokolü:** SPI üzerinden haberleşir.\n* **CAN Standartları:** CAN 2.0A ve CAN 2.0B standartlarını destekler (11-bit ve 29-bit identifier).\n* **Veri Kapasitesi:** 16 adet mesaj kuyruğu (buffer) içerir.\n* **Hız:** 125 kbps ile 1 Mbps arasında değişken veri hızlarını destekler.\n* **Donanım Gereksinimi:** MCP2515 bir \"Controller\"dır (Denetleyici). CAN hattındaki fiziksel voltaj seviyelerini (High/Low) oluşturabilmesi için mutlaka bir **CAN Transceiver** (örneğin MCP2551 veya TJA1050) ile birlikte kullanılması gerekir.\n\n**Tipik Kullanım Senaryosu:**\n* **EV (Elektrikli Araç) Sistemleri:** Batarya Yönetim Sistemi (BMS) verilerini okumak veya motor sürücü (Inverter) ile haberleşmak için mikrodenetleyici ile CAN hattı arasında köprü görevi görür.\n* **Gömülü Sistemler:** Araç içi diagnostik (OBD-II) uygulamaları ve endüstriyel otomasyon sistemlerinde veri toplama."
+      },
+      {
+        "role": "user",
+        "content": "I dont understand"
+      },
+      {
+        "role": "assistant",
+        "content": "To understand the **MCP2515**, you must distinguish between a **Controller** and a **Transceiver**.\n\nIn an Electric Vehicle (EV) or embedded system, a microcontroller (like an Arduino) speaks \"SPI\" language, but the car's battery (BMS) and motor speak \"CAN Bus\" language. They cannot understand each other directly.\n\nThe MCP2515 acts as the **Translator**:\n\n*   **The Problem:** Your microcontroller speaks **SPI** (fast, short-distance, single-wire logic). The car speaks **CAN Bus** (robust, long-distance, differential voltage).\n*   **The Solution (MCP2515):** \n    1.  Your microcontroller sends a command via **SPI** to the MCP2515.\n    2.  The **MCP2515** takes that command and packages it into a formal **CAN Frame** (adding headers, error checking, and IDs).\n    3.  The MCP2515 sends this frame to a **Transceiver** (like the TJA1050), which converts the digital signal into the actual electrical voltages used on the CAN wires.\n\n**Simplified Analogy:**\n*   **Microcontroller:** A person who only speaks English.\n*   **CAN Bus:** A group of people who only speak French.\n*   **MCP2515:** A professional translator who listens to English (SPI) and writes it down in French (CAN Frame) so the group can understand.\n\n**Technical Workflow in an EV System:**\n1.  **Microcontroller** $\\xrightarrow{\\text{SPI}}$ **MCP2515** (Converts logic to CAN protocol)\n2.  **MCP2515** $\\xrightarrow{\\text{Digital}}$ **Transceiver** (Converts protocol to electrical voltage)\n3.  **Transceiver** $\\xrightarrow{\\text{Differential Voltage}}$ **CAN Bus Line** (The actual wires in the car)"
+      },
+      {
+        "role": "user",
+        "content": "raporda klemens var mı"
+      },
+      {
+        "role": "assistant",
+        "content": "Evet, raporda klemens bulunmaktadır. Tüm detaylar aşağıdadır:\n\n* Kablodan Kabloya Klemens (5 ADET)\n    * Fiyat listesi: HEPSİBURADA: 145.65 TL\n    * Link: https://www.hepsiburada.com/robo-dunya-8-li-kablodan-kabloya-klemens-5-08-pm-HBC00006X2ABB\n    * Sebep: Kabloların montaj ve demontajını kolaylaştırmak için kullanılacaktır.\n\n* Born Klemens (2 ADET)\n    * Fiyat listesi: HEPSİBURADA: 122.9 TL\n    * Link: https://www.hepsiburada.com/koodmax-5-takim-4mm-orta-boy-born-klemens-5-kirmizi-5-siyah-pm-HBC00006U99A5\n    * Sebep: Atölyede bulunan güç kaynaklarının yıpranmış çıkışlarına takılacaktır.\n\n* D1-2 Kablo Birleştirici Klemens (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 1747.87 TL\n    * Link: https://www.hepsiburada.com/sonoff-d1-2-kablo-birlestirici-klemens-p-HBCV00005TO0XA?magaza=SONOFF%20TÜRKİYE\n    * Sebep: Kablo çoklama ve farklı boyut kabloları pratik şekilde bağlamak için kullanılacaktır.\n\n* D1-1 Kablo Birleştirici Klemens (1 ADET)\n    * Fiyat listesi: HEPSİBURADA: 612.29 TL\n    * Link: https://www.hepsiburada.com/sonoff-d1-1-cok-amacli-kablo-konnektoru-pm-HBC00005TOL8S?magaza=SONOFF%20TÜRKİYE\n    * Sebep: Kabloların montaj ve demontajını kolaylaştırmak için kullanılacaktır.\n\n* 3 Pin Buat Klemens (10 ADET)\n    * Fiyat listesi: MOTOROBİT: 13.8 TL\n    * Link: https://www.motorobit.com/da806-500mm-3-pin-tirnakli-buat-klemens\n    * Sebep: Kabloların montaj ve demontajını kolaylaştırmak için kullanılacaktır."
+      }
+    ],
+    "summary": "Kullanıcı elektrikli araç ve gömülü sistemler geliştiricisi."
+  }
+}

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded AI Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Markdown Tablo Şablonu */
+      .prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.85rem;
+      }
+      .prose th {
+        background-color: #1e293b;
+        color: #94a3b8;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #334155;
+        text-align: left;
+      }
+      .prose td {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid #334155;
+        color: #e2e8f0;
+      }
+      .prose a {
+        color: #818cf8;
+        text-decoration: underline;
+      }
+      .prose a:hover {
+        color: #a5b4fc;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-slate-100 h-screen flex flex-col font-sans">
+    <!-- Header -->
+    <header
+      class="bg-slate-900 px-6 py-4 border-b border-slate-800 flex justify-between items-center shrink-0"
+    >
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-microchip text-indigo-400 text-xl"></i>
+        <h1 class="font-semibold text-base text-slate-100 tracking-wide">
+          Gömülü Sistemler Danışmanı
+        </h1>
+      </div>
+      <label
+        class="flex items-center gap-2 text-xs font-medium text-slate-400 cursor-pointer select-none"
+      >
+        <input
+          type="checkbox"
+          id="autoSpeak"
+          class="accent-indigo-500 rounded"
+        />
+        <span>Sesli Okuma</span>
+      </label>
+    </header>
+
+    <!-- Chat Stream -->
+    <main
+      id="chatBox"
+      class="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 max-w-4xl w-full mx-auto"
+    >
+      <div
+        class="bg-slate-900 p-4 rounded-xl border border-slate-800 max-w-xl text-sm text-slate-300"
+      >
+        Sistem hazır. Donanım , mühendislik sorularınızı veya mukayese
+        raporundaki malzeme stok/fiyatlarını sorabilirsiniz.
+      </div>
+    </main>
+
+    <!-- Input Footer -->
+    <footer class="p-4 bg-slate-900 border-t border-slate-800 shrink-0">
+      <div class="max-w-4xl mx-auto flex items-center gap-2">
+        <button
+          id="micBtn"
+          type="button"
+          title="Sesli Giriş"
+          class="w-11 h-11 bg-slate-800 rounded-xl hover:bg-slate-700 transition flex items-center justify-center text-slate-300"
+        >
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <input
+          id="userInput"
+          type="text"
+          placeholder="Teknik soru veya malzeme sorgusu yazın..."
+          autocomplete="off"
+          spellcheck="false"
+          class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+        />
+        <button
+          id="sendBtn"
+          type="button"
+          class="w-11 h-11 bg-indigo-600 rounded-xl hover:bg-indigo-500 transition flex items-center justify-center text-white"
+        >
+          <i class="fa-solid fa-paper-plane text-sm"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script>
+      const API_URL = "http://127.0.0.1:8000/api/v1/chat";
+      const HISTORY_URL = "http://127.0.0.1:8000/api/v1/admin/user";
+
+      // Kullanıcı oturumunu localStorage'da saklayarak süreklilik sağla
+      let USER_ID = localStorage.getItem("ev_user_id");
+      if (!USER_ID) {
+        USER_ID = "web_user_" + Math.random().toString(36).substring(2, 9);
+        localStorage.setItem("ev_user_id", USER_ID);
+      }
+
+      const chatBox = document.getElementById("chatBox");
+      const userInput = document.getElementById("userInput");
+      const sendBtn = document.getElementById("sendBtn");
+      const micBtn = document.getElementById("micBtn");
+      const autoSpeak = document.getElementById("autoSpeak");
+
+      // Sayfa yüklendiğinde eski konuşma geçmişini getir
+      async function loadChatHistory() {
+        try {
+          const res = await fetch(`${HISTORY_URL}/${USER_ID}/history`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data.history && data.history.length > 0) {
+              chatBox.innerHTML = ""; // Hoş geldin mesajını temizle
+              data.history.forEach((item) => {
+                appendMsg("User", item.user_question);
+                appendMsg("AI", item.bot_response);
+              });
+            }
+          }
+        } catch (err) {
+          console.error("Geçmiş yüklenemedi:", err);
+        }
+      }
+
+      // Speech-to-Text
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      let recognition = null;
+      let isRecording = false;
+      let finalVoiceText = "";
+
+      if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+        recognition.lang = "tr-TR";
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.onstart = () => {
+          isRecording = true;
+          finalVoiceText = "";
+          micBtn.classList.remove("bg-slate-800", "text-slate-300");
+          micBtn.classList.add("bg-rose-600", "text-white", "animate-pulse");
+        };
+
+        recognition.onresult = (e) => {
+          if (e.results && e.results[0] && e.results[0][0]) {
+            finalVoiceText = e.results[0][0].transcript;
+          }
+        };
+
+        recognition.onerror = (e) => {
+          console.error("Ses tanıma hatası:", e.error);
+          resetMicUI();
+        };
+
+        recognition.onend = () => {
+          resetMicUI();
+          if (finalVoiceText && finalVoiceText.trim() !== "") {
+            userInput.value = finalVoiceText.trim();
+            finalVoiceText = "";
+            sendMessage();
+          }
+        };
+      }
+
+      function resetMicUI() {
+        isRecording = false;
+        micBtn.classList.remove("bg-rose-600", "text-white", "animate-pulse");
+        micBtn.classList.add("bg-slate-800", "text-slate-300");
+      }
+
+      micBtn.addEventListener("click", () => {
+        if (!recognition) {
+          alert("Tarayıcınız ses tanıma özelliğini desteklemiyor.");
+          return;
+        }
+        if (isRecording) {
+          recognition.stop();
+        } else {
+          try {
+            recognition.start();
+          } catch (err) {
+            console.error("Kayıt başlatılamadı:", err);
+          }
+        }
+      });
+
+      // Text-to-Speech
+      function speak(text) {
+        if (!autoSpeak.checked || !("speechSynthesis" in window)) return;
+        window.speechSynthesis.cancel();
+
+        // Markdown sembollerini ve linkleri temizleyip seslendir
+        const cleanText = text
+          .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+          .replace(/[*#`_\[\]|]/g, "");
+
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = "tr-TR";
+        window.speechSynthesis.speak(utterance);
+      }
+
+      // Tiki kaldırdığın an konuşmayı anında susturan dinleyici
+      autoSpeak.addEventListener("change", () => {
+        if (!autoSpeak.checked && "speechSynthesis" in window) {
+          window.speechSynthesis.cancel();
+        }
+      });
+
+      // XSS Güvenli DOM Render
+      function appendMsg(sender, rawText) {
+        const isUser = sender === "User";
+        const msgDiv = document.createElement("div");
+        msgDiv.className = `flex ${isUser ? "justify-end" : "justify-start"}`;
+
+        const content = document.createElement("div");
+        content.className = `max-w-xl p-4 rounded-xl text-sm leading-relaxed ${
+          isUser
+            ? "bg-indigo-600 text-white"
+            : "bg-slate-900 border border-slate-800 text-slate-200 prose prose-invert max-w-none"
+        }`;
+
+        if (isUser) {
+          content.textContent = rawText;
+        } else {
+          // Markdown ayrıştırıcı + XSS Sanitization
+          const parsedHtml = marked.parse(rawText);
+          content.innerHTML = DOMPurify.sanitize(parsedHtml);
+        }
+
+        msgDiv.appendChild(content);
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+
+      async function sendMessage() {
+        const text = userInput.value.trim();
+        if (!text) return;
+
+        appendMsg("User", text);
+        userInput.value = "";
+
+        const loadingDiv = document.createElement("div");
+        loadingDiv.className = "flex justify-start";
+        loadingDiv.innerHTML = `<div class="bg-slate-900 border border-slate-800 p-3 rounded-xl text-xs text-slate-400 animate-pulse">İşleniyor...</div>`;
+        chatBox.appendChild(loadingDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        try {
+          const res = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              user_id: USER_ID,
+              username: "WebClient",
+              message: text,
+            }),
+          });
+
+          loadingDiv.remove();
+
+          if (res.ok) {
+            const data = await res.json();
+            appendMsg("AI", data.response);
+            speak(data.response);
+          } else {
+            appendMsg("AI", "⚠️ Servis tarafında bir sorun oluştu.");
+          }
+        } catch (err) {
+          loadingDiv.remove();
+          appendMsg(
+            "AI",
+            "⚠️ API bağlantısı kurulamadı. Sunucuyu kontrol edin.",
+          );
+        }
+      }
+
+      sendBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        sendMessage();
+      });
+
+      userInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+
+      // Sayfa ilk yüklendiğinde konuşma geçmişini getir
+      window.addEventListener("DOMContentLoaded", loadChatHistory);
+    </script>
+  </body>
+</html>
