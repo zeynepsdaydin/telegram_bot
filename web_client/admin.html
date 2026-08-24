@@ -196,6 +196,11 @@
             summaryBox.classList.add("hidden");
           }
 
+          if (!data.history || data.history.length === 0) {
+            historyBox.innerHTML = `<p class="text-slate-500 text-center mt-10">Bu kullanıcıya ait mesaj kaydı bulunamadı.</p>`;
+            return;
+          }
+
           data.history.forEach((msg) => {
             const hasEval =
               msg.eval_score !== null && msg.eval_score !== undefined;
@@ -239,7 +244,14 @@
               </div>
             `;
           });
-          historyBox.scrollTop = historyBox.scrollHeight;
+
+          // Çift aşamalı kaydırma: DOM oluşur oluşmaz en alta indir
+          requestAnimationFrame(() => {
+            historyBox.scrollTop = historyBox.scrollHeight;
+            setTimeout(() => {
+              historyBox.scrollTop = historyBox.scrollHeight;
+            }, 100);
+          });
         }
       }
 
