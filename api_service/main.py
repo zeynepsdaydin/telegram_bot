@@ -58,7 +58,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL_NAME = "google/gemma-4-26b-a4b-it:free"
 FALLBACK_MODELS = [
     MODEL_NAME,
-    "google/gemma-4-31b-it:free",
+    "nvidia/nemotron-3-nano-30b-a3b:free"
 ]
 
 HEADERS = {
