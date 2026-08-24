@@ -197,17 +197,97 @@
           }
 
           data.history.forEach((msg) => {
+            const hasEval =
+              msg.eval_score !== null && msg.eval_score !== undefined;
+            const evalBadgeColor =
+              msg.eval_score >= 8
+                ? "text-emerald-400 border-emerald-500/30 bg-emerald-950/40"
+                : msg.eval_score >= 5
+                  ? "text-amber-400 border-amber-500/30 bg-amber-950/40"
+                  : "text-rose-400 border-rose-500/30 bg-rose-950/40";
+
             historyBox.innerHTML += `
-              <div class="mb-2">
-                <p class="text-indigo-400 font-semibold mb-0.5">👤 Kullanıcı (${msg.timestamp}):</p>
-                <div class="bg-slate-900 p-2 rounded border border-slate-800 text-slate-200 mb-1">${msg.user_question}</div>
-                <p class="text-emerald-400 font-semibold mb-0.5">🤖 Asistan:</p>
-                <div class="bg-slate-900 p-2 rounded border border-slate-800 text-slate-300 whitespace-pre-wrap">${msg.bot_response}</div>
+              <div class="mb-3 p-3 bg-slate-900/60 rounded-xl border border-slate-800" id="msg-card-${msg.id}">
+                <p class="text-indigo-400 font-semibold mb-0.5 text-xs">👤 Kullanıcı (${msg.timestamp ? msg.timestamp.substring(0, 19) : ""}):</p>
+                <div class="bg-slate-950 p-2.5 rounded border border-slate-800/80 text-slate-200 mb-2 font-mono text-xs">${msg.user_question}</div>
+                
+                <p class="text-emerald-400 font-semibold mb-0.5 text-xs">🤖 Asistan:</p>
+                <div class="bg-slate-950 p-2.5 rounded border border-slate-800/80 text-slate-300 whitespace-pre-wrap text-xs">${msg.bot_response}</div>
+                
+                <!-- Judge Agent Değerlendirme Bölümü -->
+                <div class="mt-2.5 pt-2 border-t border-slate-800/60 flex flex-col gap-1.5" id="eval-box-${msg.id}">
+                  ${
+                    hasEval
+                      ? `
+                    <div class="p-2.5 rounded-lg border ${evalBadgeColor} text-xs">
+                      <div class="flex items-center justify-between font-bold mb-1">
+                        <span>🤖 Agent Denetimi: ${msg.eval_status}</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700">${msg.eval_score} / 10 Puan</span>
+                      </div>
+                      <p class="text-slate-300 font-normal leading-relaxed">${msg.eval_reason}</p>
+                    </div>
+                  `
+                      : `
+                    <div class="flex justify-end">
+                      <button onclick="evaluateMessage(${msg.id}, \`${encodeURIComponent(msg.user_question)}\`, \`${encodeURIComponent(msg.bot_response)}\`)" class="px-2.5 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded text-[11px] font-medium transition flex items-center gap-1.5 shadow-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Agent ile Denetle
+                      </button>
+                    </div>
+                  `
+                  }
+                </div>
               </div>
-              <hr class="border-slate-800 my-2">
             `;
           });
           historyBox.scrollTop = historyBox.scrollHeight;
+        }
+      }
+
+      async function evaluateMessage(chatId, encodedQ, encodedR) {
+        const evalBox = document.getElementById(`eval-box-${chatId}`);
+        const userQ = decodeURIComponent(encodedQ);
+        const botR = decodeURIComponent(encodedR);
+
+        evalBox.innerHTML = `
+          <div class="p-2 text-xs text-indigo-300 flex items-center gap-2 animate-pulse">
+            <i class="fa-solid fa-circle-notch fa-spin"></i> Judge Agent yanıtı teknik olarak denetliyor ve puanlıyor...
+          </div>
+        `;
+
+        try {
+          const res = await fetch(`${API_BASE}/evaluate`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              chat_id: chatId,
+              user_question: userQ,
+              bot_response: botR,
+            }),
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            const evalBadgeColor =
+              data.score >= 8
+                ? "text-emerald-400 border-emerald-500/30 bg-emerald-950/40"
+                : data.score >= 5
+                  ? "text-amber-400 border-amber-500/30 bg-amber-950/40"
+                  : "text-rose-400 border-rose-500/30 bg-rose-950/40";
+
+            evalBox.innerHTML = `
+              <div class="p-2.5 rounded-lg border ${evalBadgeColor} text-xs">
+                <div class="flex items-center justify-between font-bold mb-1">
+                  <span>🤖 Agent Denetimi: ${data.status}</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700">${data.score} / 10 Puan</span>
+                </div>
+                <p class="text-slate-300 font-normal leading-relaxed">${data.reason}</p>
+              </div>
+            `;
+          } else {
+            evalBox.innerHTML = `<span class="text-rose-400 text-xs">⚠️ Denetleme başarısız oldu.</span>`;
+          }
+        } catch (e) {
+          evalBox.innerHTML = `<span class="text-rose-400 text-xs">⚠️ Bağlantı hatası oluştu.</span>`;
         }
       }
 

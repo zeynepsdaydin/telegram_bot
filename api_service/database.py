@@ -19,9 +19,20 @@ def init_db() -> None:
                 username TEXT,
                 user_question TEXT,
                 bot_response TEXT,
-                timestamp DATETIME
+                timestamp DATETIME,
+                eval_score INTEGER,
+                eval_status TEXT,
+                eval_reason TEXT
             )
         """)
+        
+        # Mevcut veritabanında yeni sütunlar yoksa güvenle ekle (Migration)
+        for col, col_type in [("eval_score", "INTEGER"), ("eval_status", "TEXT"), ("eval_reason", "TEXT")]:
+            try:
+                cursor.execute(f"ALTER TABLE chat_history ADD COLUMN {col} {col_type}")
+            except sqlite3.OperationalError:
+                pass
+
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS api_logs (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -69,6 +80,17 @@ def log_api_call(user_id: str, action: str, query: str, result: str) -> None:
         )
 
 
+def update_chat_evaluation(chat_id: int, score: int, status: str, reason: str) -> None:
+    """Judge Agent değerlendirme sonucunu kaydeder."""
+    with closing(get_connection()) as conn, conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            UPDATE chat_history
+            SET eval_score = ?, eval_status = ?, eval_reason = ?
+            WHERE id = ?
+        """, (score, status, reason, chat_id))
+
+
 # --- YÖNETİM PANELİ İÇİN OKUMA FONKSİYONLARI ---
 
 
@@ -87,12 +109,12 @@ def get_all_users() -> list[dict]:
 
 
 def get_user_chat_history(user_id: str) -> list[dict]:
-    """Belirli bir kullanıcının tüm konuşma dökümünü döner."""
+    """Belirli bir kullanıcının tüm konuşma dökümünü ve değerlendirmelerini döner."""
     with closing(get_connection()) as conn:
         cursor = conn.cursor()
         cursor.execute(
             """
-            SELECT id, user_id, username, user_question, bot_response, timestamp
+            SELECT id, user_id, username, user_question, bot_response, timestamp, eval_score, eval_status, eval_reason
             FROM chat_history
             WHERE user_id = ?
             ORDER BY id ASC

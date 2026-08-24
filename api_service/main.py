@@ -12,6 +12,7 @@ from database import (
     get_user_chat_history,
     init_db,
     log_chat,
+    update_chat_evaluation,
 )
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, status
@@ -101,6 +102,12 @@ class VoiceChatRequest(BaseModel):
     audio_base64: str
 
 
+class EvaluateRequest(BaseModel):
+    chat_id: int
+    user_question: str
+    bot_response: str
+
+
 @app.get("/health")
 async def health_check() -> dict[str, str]:
     return {"status": "healthy", "service": "AI Core API"}
@@ -123,27 +130,34 @@ async def process_chat_message(
 You MUST ALWAYS reply in the EXACT SAME language as the user's latest input message.
 - If the user writes in English, your entire response MUST be 100% English. Do NOT use Turkish.
 - If the user writes in Turkish, your entire response MUST be 100% Turkish.
-- Disregard the language of previous chat history or session summaries; ONLY mirror the language of the latest message.
+- If the user asks to change language (e.g. "türkçe anlat", "türkçe sormuştum"), IMMEDIATELY switch to that language and answer the previous question in that language.
 
 [ROLE]
-You are a strict and focused Electric Vehicle and Embedded Systems Engineer.
+You are a helpful, precise Electric Vehicle and Embedded Systems Engineer.
+
+[SCOPE & DOMAIN]
+You assist with:
+- Electric Vehicles (EV), Powertrain, Inverters, Motor Drivers
+- Battery Management Systems (BMS)
+- Automotive & Embedded Communication Protocols (CAN Bus, UART, SPI, I2C, LoRa)
+- Microcontrollers & Hardware (Arduino, STM32, ESP32, Raspberry Pi, Sensors, Displays, HMI)
+- Embedded Software, C/C++, Python, Firmware, and Project/Internship Reports.
 
 [RULES]
-1. DO NOT make small talk. Eliminate introduction and conclusion sentences.
-2. Focus ONLY on the technical solution. Use bullet points or code blocks.
-3. If the user asks non-technical or casual questions (e.g. "merhaba", "naber", "hello") AND the message does NOT contain an [EXCEL RAPORUNDAN GELEN CANLI VERİ] block, state directly and strictly that you only assist with hardware, software, EV, CAN Bus, BMS, and motor drivers.
-   - İSTİSNA: Mesajda [EXCEL RAPORUNDAN GELEN CANLI VERİ] bloğu varsa, bu kural GEÇERSİZDİR. Ürün kimyasal, sarf malzemesi, temizlik ürünü vb. "teknik olmayan" görünse bile (ör. aseton, izopropil alkol, eldiven, mikrofiber bez), bu ürün projenin malzeme/mukayese raporunda listelendiği için geçerli bir sorgudur — asla reddetme, her zaman rapor verisiyle cevapla.
-4. GÖRSEL ANALİZ KURALI: Gönderilen görseli incele.
-   - Eğer görsel ELEKTRİKLİ ARAÇ, MİKROKONTROLÖR, SENSÖR, BMS, CAN BUS, MOTOR SÜRÜCÜ, DEVRE KARTI (PCB) veya MÜHENDİSLİK DONANIMI ile İLGİLİ DEĞİLSE: Kullanıcıya bu fotoğrafın konu dışı olduğunu ve sadece donanım/EV fotoğraflarını analiz edebileceğini belirt.
-   - Eğer görsel KONUYLA İLGİLİYSE: Bileşenleri ve donanımı teknik olarak tanımla, tespit/çözüm ve önerilerini maddeler halinde sırala.
-5. NEVER use headers like "Teknik Değerlendirme:" or "Technical Assessment:". Jump directly to the bullet points or response.
-6. EXCEL MALZEME SORGUSU KURALI: [EXCEL RAPORUNDAN GELEN CANLI VERİ] bloğu geldiğinde, SADECE "var/yok" veya miktar bilgisiyle YETİNME. JSON içindeki HER ürün için aşağıdaki alanların TAMAMINI madde madde göster:
-   - Ürün adı ve miktarı (birim ile)
-   - Fiyat listesi (fiyat_listesi alanındaki HER firma ve fiyatını tek tek listele, tek bir firmayla yetinme)
-   - Link (link alanındaki URL'yi olduğu gibi ver)
-   - Sebep (sebep alanı, varsa)
-   Bu alanlardan hiçbirini atlama, kısaltma veya özetleme; JSON'daki ham veriyi eksiksiz kullanıcıya aktar.
-   ÖNEMLİ: JSON dizisindeki HER eleman AYRI bir satırdır, JSON'da kaç eleman varsa cevapta o kadar madde olmalı. İki elemanın "urun_adi" alanı birbirinin AYNISI olsa bile, bunlar farklı link/fiyat/sebep taşıyan FARKLI kayıtlardır — asla tek bir maddeye birleştirme, her elemanı ayrı ayrı listele."""
+1. Eliminate introductory fluff and generic conversational filler. Jump straight to the technical content or solution.
+2. Structure your answers clearly using bullet points, short concise paragraphs, or code blocks where appropriate.
+3. CONVERSATIONAL CONTEXT & FOLLOW-UPS:
+   - When the user asks follow-up questions (e.g. "türkçe açıkla", "örnek ver", "ne demek", "neden"), ALWAYS answer based on the previous conversation history.
+   - When asked about reports, hardware components, or microcontrollers (including Arduino, sensors, etc.), treat them as VALID technical queries.
+4. OUT-OF-SCOPE FILTER:
+   - Only reject queries that are completely unrelated to engineering/tech/EV/hardware/software (e.g., cooking recipes, gossip, sports news).
+   - If a message is entirely out-of-scope and does NOT contain an [EXCEL RAPORUNDAN GELEN CANLI VERİ] block, politely state: "Sadece donanım, yazılım, EV, CAN Bus, BMS ve motor sürücüleri ile ilgili konularda yardımcı olabilirim."
+   - EXCEPTION: If the message contains [EXCEL RAPORUNDAN GELEN CANLI VERİ], NEVER reject it, even for consumables (tape, alcohol, gloves, etc.).
+5. IMAGE ANALYSIS:
+   - If an image is not related to engineering/hardware/EV/circuits, state that you only analyze technical hardware visuals.
+   - If related, analyze components and list findings/recommendations cleanly.
+6. EXCEL RAPORU SORGULARI:
+   - [EXCEL RAPORUNDAN GELEN CANLI VERİ] bloğu geldiğinde ham veriyi eksiksiz aktar (Ürün adı, miktar, tüm firma fiyatları, link, sebep). Asla birleştirme veya özetleme yapma."""
 
         if session.get("summary"):
             system_content += f"\n\n[OTURUM BİLGİSİ VE ÖZETİ]:\n{session['summary']}"
@@ -248,6 +262,60 @@ You are a strict and focused Electric Vehicle and Embedded Systems Engineer.
         ) from exc
 
 
+# ==========================================
+# JUDGE AGENT: DEĞERLENDİRME & PUANLAMA MOTORU
+# ==========================================
+
+
+async def judge_agent_evaluation(user_question: str, bot_response: str) -> dict:
+    """Görüşmeyi 1-10 arası puanlayan ve teknik nedenini açıklayan Denetçi LLM."""
+    judge_system_prompt = """Sen Elektrikli Araçlar, BMS, CAN Bus, Gömülü Sistemler ve Donanım Mühendisliği alanında uzman Baş Denetçisin (LLM-as-a-Judge).
+Görevin: Kullanıcının sorusuna asistanın verdiği cevabın teknik doğruluğunu, yeterliliğini ve tutarlılığını denetlemektir.
+
+Değerlendirme Kriterleri:
+1. Teknik Doğruluk: Bilgiler mühendislik standartlarına (CAN Bus diferansiyel hatları, BMS hücre voltajları, mikrodenetleyici mimarileri vb.) uygun mu?
+2. Kapsam Uygunluğu: Asistan konu dışına çıkmış mı veya gereksiz dolandırmış mı?
+3. Soruya Tam Yanıt: Kullanıcının sorduğu şeyi doğrudan cevaplamış mı?
+
+ÇIKTI KURALI:
+SADECE ve SADECE aşağıdaki JSON formatında geçerli bir JSON çıktısı döndür. Markdown backtick veya fazladan hiçbir açıklama ekleme:
+{
+    "score": <1 ile 10 arasında tam sayı puan>,
+    "status": "<Doğru | Kısmen Doğru | Hatalı>",
+    "reason": "<Neden bu puanın verildiğini, varsa teknik hatayı veya eksikliği belirten 1-2 cümlelik net açıklama>"
+}"""
+
+    judge_messages = [
+        {"role": "system", "content": judge_system_prompt},
+        {
+            "role": "user",
+            "content": f"[KULLANICI SORUSU]: {user_question}\n\n[ASİSTAN YANITI]: {bot_response}",
+        },
+    ]
+
+    payload = {
+        "models": FALLBACK_MODELS,
+        "messages": judge_messages,
+        "temperature": 0.0,
+    }
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            resp = await client.post(OPENROUTER_URL, headers=HEADERS, json=payload)
+            if resp.status_code == 200:
+                raw_content = resp.json()["choices"][0]["message"]["content"].strip()
+                raw_content = raw_content.replace("```json", "").replace("```", "").strip()
+                return json.loads(raw_content)
+    except Exception as e:
+        print(f"⚠️ Judge Agent Hatası: {e}")
+
+    return {
+        "score": 5,
+        "status": "Değerlendirilemedi",
+        "reason": "Judge Agent yanıtı ayrıştırılamadı veya API zaman aşımına uğradı.",
+    }
+
+
 @app.post("/api/v1/chat", response_model=ChatResponse)
 async def chat_endpoint(request: ChatRequest) -> ChatResponse:
     user_id = request.user_id
@@ -325,10 +393,25 @@ async def admin_logs(limit: int = 50):
     """Araç / Tool ve RAG çağrı logları."""
     return get_all_logs(limit=limit)
 
+
+@app.post("/api/v1/admin/evaluate")
+async def evaluate_message_endpoint(req: EvaluateRequest):
+    """Admin panelinden seçilen konuşmayı Judge Agent ile denetler ve sonucu veri tabanına kaydeder."""
+    result = await judge_agent_evaluation(req.user_question, req.bot_response)
+    update_chat_evaluation(
+        chat_id=req.chat_id,
+        score=result.get("score", 0),
+        status=result.get("status", "Bilinmiyor"),
+        reason=result.get("reason", ""),
+    )
+    return result
+
+
 @app.get("/api/v1/chat/history/{user_id}")
 async def get_chat_history_endpoint(user_id: str):
     """Kullanıcının geçmiş mesajlarını web arayüzüne yükler."""
     return get_user_chat_history(user_id)
+
 
 # ==========================================
 # GÖREV 11: TELEGRAM WEBHOOK ENDPOINT
